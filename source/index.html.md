@@ -192,7 +192,7 @@ This endpoint cancels a specific order.
 
 ### HTTP Request
 
-`GET http://api.nitro.alconost.com/v1/orders/<ID>/cancel`
+`POST http://api.nitro.alconost.com/v1/orders/<ID>/cancel`
 
 ### URL Parameters
 
