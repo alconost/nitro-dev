@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Alconost Nitro API Reference</title>
+    <title>Nitro API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -142,6 +142,32 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 You must replace <code>{API_KEY}</code> with your personal API key.
 </aside>
 
+<h1 id="user">User</h1>
+
+<h2 id="get-user">Get User</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/user"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: {API_KEY}"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@alconost.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nitro"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"balance_overdraft_allowed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"reserved"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.24</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">174.46</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves a user.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.nitro.alconost.com/v1/user</code></p>
+
 <h1 id="orders">Orders</h1>
 
 <h2 id="get-all-orders">Get All Orders</h2>
@@ -174,7 +200,6 @@ You must replace <code>{API_KEY}</code> with your personal API key.
     </span><span class="nt">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-30T13:00:47.312484Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-
 </span></code></pre>
 
 <p>This endpoint retrieves all user orders.</p>
@@ -182,6 +207,27 @@ You must replace <code>{API_KEY}</code> with your personal API key.
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET http://api.nitro.alconost.com/v1/orders</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>integer</td>
+<td>Page number (default: 0)</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>Orders count (default: 20)</td>
+<td></td>
+</tr>
+</tbody></table>
 
 <h2 id="get-a-specific-order">Get a Specific Order</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/orders/6"</span> <span class="se">\</span>
@@ -195,6 +241,7 @@ You must replace <code>{API_KEY}</code> with your personal API key.
   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
   </span><span class="nt">"source_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QUEUE"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
@@ -244,6 +291,7 @@ You must replace <code>{API_KEY}</code> with your personal API key.
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
     </span><span class="nt">"source_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QUEUE"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
@@ -258,6 +306,7 @@ You must replace <code>{API_KEY}</code> with your personal API key.
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
     </span><span class="nt">"source_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QUEUE"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"it"</span><span class="p">,</span><span class="w">
@@ -328,11 +377,13 @@ You must replace <code>{API_KEY}</code> with your personal API key.
 <table><thead>
 <tr>
 <th>Parameter</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead><tbody>
 <tr>
 <td>ID</td>
+<td>integer</td>
 <td>The ID of the order to be cancelled</td>
 </tr>
 </tbody></table>
@@ -340,6 +391,64 @@ You must replace <code>{API_KEY}</code> with your personal API key.
 <aside class="notice">
 You can cancel order with QUEUE status only.
 </aside>
+
+<h1 id="misc">Misc</h1>
+
+<h2 id="get-rates">Get Rates</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/rates"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: {API_KEY}"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="nt">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nt">"targetLanguage"</span><span class="p">:</span><span class="s2">"ms"</span><span class="p">,</span><span class="w"> </span><span class="nt">"rate"</span><span class="p">:</span><span class="mf">15.4</span><span class="p">,</span><span class="w"> </span><span class="nt">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nt">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nt">"targetLanguage"</span><span class="p">:</span><span class="s2">"tl"</span><span class="p">,</span><span class="w"> </span><span class="nt">"rate"</span><span class="p">:</span><span class="mf">15.4</span><span class="p">,</span><span class="w"> </span><span class="nt">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nt">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nt">"targetLanguage"</span><span class="p">:</span><span class="s2">"is"</span><span class="p">,</span><span class="w"> </span><span class="nt">"rate"</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span><span class="w"> </span><span class="nt">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves all rates.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.nitro.alconost.com/v1/rates</code></p>
+
+<h2 id="detect-language">Detect Language</h2>
+<pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/language?text=Test"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: {API_KEY}"</span>
+</code></pre>
+
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p>This endpoint retrieves a language detected.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET http://api.nitro.alconost.com/v1/language</code></p>
+
+<h3 id="query-parameters">Query parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>Text</td>
+</tr>
+</tbody></table>
 
           <h1 id="errors">Errors</h1>
 
