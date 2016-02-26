@@ -1,5 +1,5 @@
 ---
-title: Alconost Nitro API Reference
+title: Nitro API Reference
 
 language_tabs:
   - shell
@@ -37,6 +37,35 @@ Nitro expects for the API key to be included in all API requests to the server i
 You must replace <code>{API_KEY}</code> with your personal API key.
 </aside>
 
+# User
+
+## Get User
+
+```shell
+curl "http://api.nitro.alconost.com/v1/user" \
+  -H "Authorization: {API_KEY}"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id" : 123,
+  "email": "test@alconost.com",
+  "full_name": "Nitro",
+  "balance_overdraft_allowed": false,
+  "reserved": 0.24,
+  "balance": 174.46
+}
+```
+
+This endpoint retrieves a user.
+
+### HTTP Request
+
+`GET http://api.nitro.alconost.com/v1/user`
+
+
 # Orders
 
 ## Get All Orders
@@ -71,7 +100,6 @@ curl "http://api.nitro.alconost.com/v1/orders" \
     "completed_at": "2016-01-30T13:00:47.312484Z"
   }
 ]
-
 ```
 
 This endpoint retrieves all user orders.
@@ -79,6 +107,14 @@ This endpoint retrieves all user orders.
 ### HTTP Request
 
 `GET http://api.nitro.alconost.com/v1/orders`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+page | integer | Page number (default: 0)
+per_page | Orders count (default: 20)
+
 
 ## Get a Specific Order
 
@@ -94,6 +130,7 @@ curl "http://api.nitro.alconost.com/v1/orders/6" \
   "id": 6,
   "source_text": "Test",
   "status": "QUEUE",
+  "hint": "",
   "name": "Test",
   "source_language": "en",
   "target_language": "ru",
@@ -137,6 +174,7 @@ curl -X POST "http://api.nitro.alconost.com/v1/orders" \
     "id": 6,
     "source_text": "Test",
     "status": "QUEUE",
+    "hint": "",
     "name": "Test",
     "source_language": "en",
     "target_language": "ru",
@@ -151,6 +189,7 @@ curl -X POST "http://api.nitro.alconost.com/v1/orders" \
     "id": 7,
     "source_text": "Test",
     "status": "QUEUE",
+    "hint": "",
     "name": "Test",
     "source_language": "en",
     "target_language": "it",
@@ -196,10 +235,62 @@ This endpoint cancels a specific order.
 
 ### URL Parameters
 
-Parameter | Description
---------- | -----------
-ID | The ID of the order to be cancelled
+Parameter | Type | Description
+--------- | ---- | -----------
+ID | integer | The ID of the order to be cancelled
 
 <aside class="notice">
 You can cancel order with QUEUE status only.
 </aside>
+
+# Misc
+
+## Get Rates
+
+```shell
+curl "http://api.nitro.alconost.com/v1/rates" \
+  -H "Authorization: {API_KEY}"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {"sourceLanguage":"en", "targetLanguage":"ms", "rate":15.4, "quality":"EXCELLENT"},
+  {"sourceLanguage":"en", "targetLanguage":"tl", "rate":15.4, "quality":"EXCELLENT"},
+  {"sourceLanguage":"en", "targetLanguage":"is", "rate":20.0, "quality":"EXCELLENT"}
+]
+````
+
+This endpoint retrieves all rates.
+
+### HTTP Request
+
+`GET http://api.nitro.alconost.com/v1/rates`
+
+## Detect Language
+
+```shell
+curl "http://api.nitro.alconost.com/v1/language?text=Test" \
+  -H "Authorization: {API_KEY}"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "language": "en"
+}
+````
+
+This endpoint retrieves a language detected.
+
+### HTTP Request
+
+`GET http://api.nitro.alconost.com/v1/language`
+
+### Query parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+text | string | Text
