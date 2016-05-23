@@ -168,6 +168,21 @@ You must replace <code>{API_KEY}</code> with your personal API key.
 
 <p><code class="prettyprint">GET http://api.nitro.alconost.com/v1/user</code></p>
 
+<h2 id="set-password">Set Password</h2>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"https://api.nitro.alconost.com/v1/user/password </span><span class="se">\</span><span class="s2">
+  -H "</span>Authorization: <span class="o">{</span>API_KEY<span class="o">}</span><span class="s2">" </span><span class="se">\</span><span class="s2">
+  -d previous_password="</span>oldpassword<span class="s2">" </span><span class="se">\</span><span class="s2">
+  -d password="</span>newpassword<span class="s2">"
+</span></code></pre>
+
+<blockquote>
+<p>The above command returns status 200 if password has been changed succesfully</p>
+</blockquote>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST http://api.nitro.alconost.com/v1/user/password</code></p>
+
 <h1 id="orders">Orders</h1>
 
 <h2 id="get-all-orders">Get All Orders</h2>
