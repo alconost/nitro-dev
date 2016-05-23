@@ -65,6 +65,17 @@ This endpoint retrieves a user.
 
 `GET http://api.nitro.alconost.com/v1/user`
 
+## Set Password
+
+```shell
+curl "https://api.nitro.alconost.com/v1/user/password \
+  -H "Authorization: {API_KEY}" \
+  -d previous_password="oldpassword" \
+  -d password="newpassword"
+```
+
+> The above command returns status 200 if password has been changed succesfully
+
 
 # Orders
 
