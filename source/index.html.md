@@ -298,7 +298,7 @@ This endpoint retrieves all user transactions.
 Parameter | Type | Description
 --------- | ---- | -----------
 page | integer | Page number (default: 0)
-per_page | Orders count (default: 20)
+per_page | Transactions count (default: 20)
 
 # Misc
 
