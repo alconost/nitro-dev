@@ -257,6 +257,49 @@ ID | integer | The ID of the order to be cancelled
 You can cancel order with QUEUE status only.
 </aside>
 
+# Transactions
+
+## Get All Transactions
+
+```shell
+curl "http://api.nitro.alconost.com/v1/transactions" \
+  -H "Authorization: {API_KEY}"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "id": 53742,
+    "time": "2016-03-30T15:52:27.29Z",
+    "amount": 5,
+    "balance": 10,
+    "details": "Translation 1"
+  },
+  {
+    "id": 53716,
+    "time": "2016-03-23T16:22:18.791Z",
+    "amount": 5,
+    "balance": 5,
+    "details": "Translation 2"
+  }
+]
+```
+
+This endpoint retrieves all user transactions.
+
+### HTTP Request
+
+`GET http://api.nitro.alconost.com/v1/transactions`
+
+### Query Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+page | integer | Page number (default: 0)
+per_page | Orders count (default: 20)
+
 # Misc
 
 ## Get Rates
