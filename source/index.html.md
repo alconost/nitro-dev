@@ -275,19 +275,19 @@ curl "http://api.nitro.alconost.com/v1/transactions" \
     "time": "2016-03-30T15:52:27.29Z",
     "amount": 5,
     "balance": 10,
-    "details": "Translation 1"
+    "reason": "CUSTOMER_FEE"
   },
   {
     "id": 53716,
     "time": "2016-03-23T16:22:18.791Z",
     "amount": 5,
     "balance": 5,
-    "details": "Translation 2"
+    "reason": "CUSTOMER_FEE"
   }
 ]
 ```
 
-This endpoint retrieves all user transactions.
+This endpoint retrieves all user transactions. At this moment the `reason` property is enum and can be equals `ADD_WITHDRAW_FUNDS` or `CUSTOMER_FEE`.
 
 ### HTTP Request
 
