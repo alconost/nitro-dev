@@ -423,19 +423,19 @@ You can cancel order with QUEUE status only.
     </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-30T15:52:27.29Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
     </span><span class="nt">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Translation 1"</span><span class="w">
+    </span><span class="nt">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CUSTOMER_FEE"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">53716</span><span class="p">,</span><span class="w">
     </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-23T16:22:18.791Z"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
     </span><span class="nt">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"details"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Translation 2"</span><span class="w">
+    </span><span class="nt">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CUSTOMER_FEE"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 
-<p>This endpoint retrieves all user transactions.</p>
+<p>This endpoint retrieves all user transactions. At this moment the <code class="prettyprint">reason</code> property is enum and can be equals <code class="prettyprint">ADD_WITHDRAW_FUNDS</code> or <code class="prettyprint">CUSTOMER_FEE</code>.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
