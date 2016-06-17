@@ -24,17 +24,17 @@ Welcome to the Alconost Nitro API! You can use our API to access Nitro API endpo
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here" \
-  -H "Authorization: {API_KEY}"
+  -H "Authorization: Basic {TOKEN}"
 ```
 
-> Make sure to replace `{API_KEY}` with your API key.
+> Make sure to replace `{TOKEN}` with your token.
 
-Nitro expects for the API key to be included in all API requests to the server in a header that looks like the following:
+Nitro expects the token to be included in all API requests to the server in a Basic authentication header that looks like the following:
 
-`Authorization: {API_KEY}`
+`Authorization: Basic {TOKEN}`
 
 <aside class="notice">
-You must replace <code>{API_KEY}</code> with your personal API key.
+You must replace <code>{TOKEN}</code> with your personal token. Personal token is `email:password` Base64 encoded.
 </aside>
 
 # User
@@ -43,7 +43,7 @@ You must replace <code>{API_KEY}</code> with your personal API key.
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/user" \
-  -H "Authorization: {API_KEY}"
+  -H "Authorization: {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
@@ -65,20 +65,6 @@ This endpoint retrieves a user.
 
 `GET http://api.nitro.alconost.com/v1/user`
 
-## Set Password
-
-```shell
-curl -X POST "https://api.nitro.alconost.com/v1/user/password \
-  -H "Authorization: {API_KEY}" \
-  -d previous_password="oldpassword" \
-  -d password="newpassword"
-```
-
-> The above command returns status 200 if password has been changed succesfully
-
-### HTTP Request
-
-`POST http://api.nitro.alconost.com/v1/user/password`
 
 # Orders
 
@@ -86,7 +72,7 @@ curl -X POST "https://api.nitro.alconost.com/v1/user/password \
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/orders" \
-  -H "Authorization: {API_KEY}"
+  -H "Authorization: {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
@@ -134,7 +120,7 @@ per_page | Orders count (default: 20)
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/orders/6" \
-  -H "Authorization: {API_KEY}"
+  -H "Authorization: {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
@@ -173,7 +159,7 @@ ID | The ID of the order to retrieve
 
 ```shell
 curl -X POST "http://api.nitro.alconost.com/v1/orders" \
-  -H "Authorization: {API_KEY}" \
+  -H "Authorization: {TOKEN}" \
   -d source_language="en" \
   -d target_languages=["ru", "it"] \
   -d text="Test" \
@@ -235,8 +221,8 @@ quality | enum | Translation quality (at this moment EXCELENT quality supported 
 ## Cancel an Order
 
 ```shell
-curl -X POST "http://api.nitro.alconost.com/v1/orders/6/cancel" \
-  -H "Authorization: {API_KEY}"
+curl -X PUT "http://api.nitro.alconost.com/v1/orders/6/cancel" \
+  -H "Authorization: {TOKEN}"
 ```
 
 > The above command returns 204 No Content:
@@ -245,7 +231,7 @@ This endpoint cancels a specific order.
 
 ### HTTP Request
 
-`POST http://api.nitro.alconost.com/v1/orders/<ID>/cancel`
+`PUT http://api.nitro.alconost.com/v1/orders/<ID>/cancel`
 
 ### URL Parameters
 
@@ -257,56 +243,14 @@ ID | integer | The ID of the order to be cancelled
 You can cancel order with QUEUE status only.
 </aside>
 
-# Transactions
 
-## Get All Transactions
-
-```shell
-curl "http://api.nitro.alconost.com/v1/transactions" \
-  -H "Authorization: {API_KEY}"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 53742,
-    "time": "2016-03-30T15:52:27.29Z",
-    "amount": 5,
-    "balance": 10,
-    "reason": "CUSTOMER_FEE"
-  },
-  {
-    "id": 53716,
-    "time": "2016-03-23T16:22:18.791Z",
-    "amount": 5,
-    "balance": 5,
-    "reason": "CUSTOMER_FEE"
-  }
-]
-```
-
-This endpoint retrieves all user transactions. At this moment the `reason` property is enum and can be equals `ADD_WITHDRAW_FUNDS` or `CUSTOMER_FEE`.
-
-### HTTP Request
-
-`GET http://api.nitro.alconost.com/v1/transactions`
-
-### Query Parameters
-
-Parameter | Type | Description
---------- | ---- | -----------
-page | integer | Page number (default: 0)
-per_page | Transactions count (default: 20)
-
-# Misc
+# Rates
 
 ## Get Rates
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/rates" \
-  -H "Authorization: {API_KEY}"
+  -H "Authorization: {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
@@ -325,29 +269,46 @@ This endpoint retrieves all rates.
 
 `GET http://api.nitro.alconost.com/v1/rates`
 
-## Detect Language
+
+# Transactions
+
+## Get All Transactions
 
 ```shell
-curl "http://api.nitro.alconost.com/v1/language?text=Test" \
-  -H "Authorization: {API_KEY}"
+curl "http://api.nitro.alconost.com/v1/transactions" \
+  -H "Authorization: {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
 
 ```json
-{
-  "language": "en"
-}
-````
+[
+  {
+    "id": 53742,
+    "time": "2016-03-30T15:52:27.29Z",
+    "amount": 5,
+    "balance": 10,
+    "reason": "ADD_WITHDRAW_FUNDS"
+  },
+  {
+    "id": 53716,
+    "time": "2016-03-23T16:22:18.791Z",
+    "amount": 5,
+    "balance": 5,
+    "reason": "ADD_WITHDRAW_FUNDS"
+  }
+]
+```
 
-This endpoint retrieves a language detected.
+This endpoint retrieves all user transactions. At this moment the `reason` property is enum and can be equals `ADD_WITHDRAW_FUNDS` or `CUSTOMER_FEE`.
 
 ### HTTP Request
 
-`GET http://api.nitro.alconost.com/v1/language`
+`GET http://api.nitro.alconost.com/v1/transactions`
 
-### Query parameters
+### Query Parameters
 
 Parameter | Type | Description
 --------- | ---- | -----------
-text | string | Text
+page | integer | Page number (default: 0)
+per_page | Transactions count (default: 20)
