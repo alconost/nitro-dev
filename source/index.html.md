@@ -43,7 +43,7 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/user" \
-  -H "Authorization: {TOKEN}"
+  -H "Authorization: Basic {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
@@ -72,7 +72,7 @@ This endpoint retrieves a user.
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/orders" \
-  -H "Authorization: {TOKEN}"
+  -H "Authorization: Basic {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
@@ -120,7 +120,7 @@ per_page | Orders count (default: 20)
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/orders/6" \
-  -H "Authorization: {TOKEN}"
+  -H "Authorization: Basic {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
@@ -159,7 +159,7 @@ ID | The ID of the order to retrieve
 
 ```shell
 curl -X POST "http://api.nitro.alconost.com/v1/orders" \
-  -H "Authorization: {TOKEN}" \
+  -H "Authorization: Basic {TOKEN}" \
   -d source_language="en" \
   -d target_languages=["ru", "it"] \
   -d text="Test" \
@@ -218,29 +218,29 @@ target_languages | array | Collection of target languages
 text | string | Text to be translated
 quality | enum | Translation quality (at this moment EXCELENT quality supported only)
 
-## Cancel an Order
+## Delete an Order
 
 ```shell
-curl -X PUT "http://api.nitro.alconost.com/v1/orders/6/cancel" \
-  -H "Authorization: {TOKEN}"
+curl -X DELETE "http://api.nitro.alconost.com/v1/orders/6" \
+  -H "Authorization: Basic {TOKEN}"
 ```
 
 > The above command returns 204 No Content:
 
-This endpoint cancels a specific order.
+This endpoint deletes a specific order.
 
 ### HTTP Request
 
-`PUT http://api.nitro.alconost.com/v1/orders/<ID>/cancel`
+`DELETE http://api.nitro.alconost.com/v1/orders/<ID>`
 
 ### URL Parameters
 
 Parameter | Type | Description
 --------- | ---- | -----------
-ID | integer | The ID of the order to be cancelled
+ID | integer | The ID of the order to be deleted
 
 <aside class="notice">
-You can cancel order with QUEUE status only.
+You can delete order with QUEUE status only.
 </aside>
 
 
@@ -250,7 +250,7 @@ You can cancel order with QUEUE status only.
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/rates" \
-  -H "Authorization: {TOKEN}"
+  -H "Authorization: Basic {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
@@ -276,7 +276,7 @@ This endpoint retrieves all rates.
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/transactions" \
-  -H "Authorization: {TOKEN}"
+  -H "Authorization: Basic {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
