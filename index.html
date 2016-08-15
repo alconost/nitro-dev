@@ -146,7 +146,7 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 
 <h2 id="get-user">Get User</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/user"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Basic {TOKEN}"</span>
 </code></pre>
 
 <blockquote>
@@ -172,7 +172,7 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 
 <h2 id="get-all-orders">Get All Orders</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/orders"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Basic {TOKEN}"</span>
 </code></pre>
 
 <blockquote>
@@ -231,7 +231,7 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 
 <h2 id="get-a-specific-order">Get a Specific Order</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/orders/6"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Basic {TOKEN}"</span>
 </code></pre>
 
 <blockquote>
@@ -276,7 +276,7 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 
 <h2 id="create-an-order">Create an Order</h2>
 <pre class="highlight shell"><code>curl -X POST <span class="s2">"http://api.nitro.alconost.com/v1/orders"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: {TOKEN}"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Basic {TOKEN}"</span> <span class="se">\</span>
   -d <span class="nv">source_language</span><span class="o">=</span><span class="s2">"en"</span> <span class="se">\</span>
   -d <span class="nv">target_languages</span><span class="o">=[</span><span class="s2">"ru"</span>, <span class="s2">"it"</span><span class="o">]</span> <span class="se">\</span>
   -d <span class="nv">text</span><span class="o">=</span><span class="s2">"Test"</span> <span class="se">\</span>
@@ -357,20 +357,20 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 </tr>
 </tbody></table>
 
-<h2 id="cancel-an-order">Cancel an Order</h2>
-<pre class="highlight shell"><code>curl -X PUT <span class="s2">"http://api.nitro.alconost.com/v1/orders/6/cancel"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: {TOKEN}"</span>
+<h2 id="delete-an-order">Delete an Order</h2>
+<pre class="highlight shell"><code>curl -X DELETE <span class="s2">"http://api.nitro.alconost.com/v1/orders/6"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Basic {TOKEN}"</span>
 </code></pre>
 
 <blockquote>
 <p>The above command returns 204 No Content:</p>
 </blockquote>
 
-<p>This endpoint cancels a specific order.</p>
+<p>This endpoint deletes a specific order.</p>
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">PUT http://api.nitro.alconost.com/v1/orders/&lt;ID&gt;/cancel</code></p>
+<p><code class="prettyprint">DELETE http://api.nitro.alconost.com/v1/orders/&lt;ID&gt;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -384,19 +384,19 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 <tr>
 <td>ID</td>
 <td>integer</td>
-<td>The ID of the order to be cancelled</td>
+<td>The ID of the order to be deleted</td>
 </tr>
 </tbody></table>
 
 <aside class="notice">
-You can cancel order with QUEUE status only.
+You can delete order with QUEUE status only.
 </aside>
 
 <h1 id="rates">Rates</h1>
 
 <h2 id="get-rates">Get Rates</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/rates"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Basic {TOKEN}"</span>
 </code></pre>
 
 <blockquote>
@@ -414,61 +414,6 @@ You can cancel order with QUEUE status only.
 <h3 id="http-request">HTTP Request</h3>
 
 <p><code class="prettyprint">GET http://api.nitro.alconost.com/v1/rates</code></p>
-
-<h1 id="transactions">Transactions</h1>
-
-<h2 id="get-all-transactions">Get All Transactions</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/transactions"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: {TOKEN}"</span>
-</code></pre>
-
-<blockquote>
-<p>The above command returns JSON structured like this:</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">53742</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-30T15:52:27.29Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADD_WITHDRAW_FUNDS"</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">53716</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-03-23T16:22:18.791Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADD_WITHDRAW_FUNDS"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
-</span></code></pre>
-
-<p>This endpoint retrieves all user transactions. At this moment the <code class="prettyprint">reason</code> property is enum and can be equals <code class="prettyprint">ADD_WITHDRAW_FUNDS</code> or <code class="prettyprint">CUSTOMER_FEE</code>.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET http://api.nitro.alconost.com/v1/transactions</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>page</td>
-<td>integer</td>
-<td>Page number (default: 0)</td>
-</tr>
-<tr>
-<td>per_page</td>
-<td>Transactions count (default: 20)</td>
-<td></td>
-</tr>
-</tbody></table>
 
           <h1 id="errors">Errors</h1>
 
