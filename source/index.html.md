@@ -42,7 +42,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 ## Get User
 
 ```shell
-curl "http://api.nitro.alconost.com/v1/user" \
+curl "https://nitro.alconost.com/api/v1/user" \
   -H "Authorization: Bearer {TOKEN}"
 ```
 
@@ -63,7 +63,7 @@ This endpoint retrieves a user.
 
 ### HTTP Request
 
-`GET http://api.nitro.alconost.com/v1/user`
+`GET https://nitro.alconost.com/api/v1/user`
 
 
 # Orders
@@ -71,7 +71,7 @@ This endpoint retrieves a user.
 ## Get All Orders
 
 ```shell
-curl "http://api.nitro.alconost.com/v1/orders" \
+curl "https://nitro.alconost.com/api/v1/orders" \
   -H "Authorization: Bearer {TOKEN}"
 ```
 
@@ -106,7 +106,7 @@ This endpoint retrieves all user orders.
 
 ### HTTP Request
 
-`GET http://api.nitro.alconost.com/v1/orders`
+`GET https://nitro.alconost.com/api/v1/orders`
 
 ### Query Parameters
 
@@ -119,7 +119,7 @@ per_page | Orders count (default: 20)
 ## Get a Specific Order
 
 ```shell
-curl "http://api.nitro.alconost.com/v1/orders/6" \
+curl "https://nitro.alconost.com/api/v1/orders/6" \
   -H "Authorization: Bearer {TOKEN}"
 ```
 
@@ -147,7 +147,7 @@ This endpoint retrieves a specific order.
 
 ### HTTP Request
 
-`GET http://api.nitro.alconost.com/v1/orders/<ID>`
+`GET https://nitro.alconost.com/api/v1/orders/<ID>`
 
 ### URL Parameters
 
@@ -158,7 +158,7 @@ ID | The ID of the order to retrieve
 ## Create an Order
 
 ```shell
-curl -X POST "http://api.nitro.alconost.com/v1/orders" \
+curl -X POST "https://nitro.alconost.com/api/v1/orders" \
   -H "Authorization: Bearer {TOKEN}" \
   -d source_language="en" \
   -d target_languages=["ru", "it"] \
@@ -207,7 +207,7 @@ This endpoint creates a new order.
 
 ### HTTP Request
 
-`POST http://api.nitro.alconost.com/v1/orders`
+`POST https://nitro.alconost.com/api/v1/orders`
 
 ### Attributes
 
@@ -221,7 +221,7 @@ quality | enum | Translation quality (at this moment EXCELENT quality supported 
 ## Delete an Order
 
 ```shell
-curl -X DELETE "http://api.nitro.alconost.com/v1/orders/6" \
+curl -X DELETE "https://nitro.alconost.com/api/v1/orders/6" \
   -H "Authorization: Bearer {TOKEN}"
 ```
 
@@ -231,7 +231,7 @@ This endpoint deletes a specific order.
 
 ### HTTP Request
 
-`DELETE http://api.nitro.alconost.com/v1/orders/<ID>`
+`DELETE https://nitro.alconost.com/api/v1/orders/<ID>`
 
 ### URL Parameters
 
@@ -249,7 +249,7 @@ You can delete order with QUEUE status only.
 ## Get Rates
 
 ```shell
-curl "http://api.nitro.alconost.com/v1/rates" \
+curl "https://nitro.alconost.com/api/v1/rates" \
   -H "Authorization: Bearer {TOKEN}"
 ```
 
@@ -267,4 +267,4 @@ This endpoint retrieves all rates.
 
 ### HTTP Request
 
-`GET http://api.nitro.alconost.com/v1/rates`
+`GET https://nitro.alconost.com/api/v1/rates`
