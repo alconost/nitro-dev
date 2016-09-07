@@ -127,26 +127,26 @@
 </blockquote>
 <pre class="highlight shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 
 <blockquote>
 <p>Make sure to replace <code class="prettyprint">{TOKEN}</code> with your token.</p>
 </blockquote>
 
-<p>Nitro expects the token to be included in all API requests to the server in a Basic authentication header that looks like the following:</p>
+<p>Nitro expects the token to be included in all API requests to the server in authentication header that looks like the following:</p>
 
-<p><code class="prettyprint">Authorization: Basic {TOKEN}</code></p>
+<p><code class="prettyprint">Authorization: Bearer {TOKEN}</code></p>
 
 <aside class="notice">
-You must replace <code>{TOKEN}</code> with your personal token. Personal token is `email:password` Base64 encoded.
+You must replace <code>{TOKEN}</code> with your personal token.
 </aside>
 
 <h1 id="user">User</h1>
 
 <h2 id="get-user">Get User</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/user"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 
 <blockquote>
@@ -172,7 +172,7 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 
 <h2 id="get-all-orders">Get All Orders</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/orders"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 
 <blockquote>
@@ -231,7 +231,7 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 
 <h2 id="get-a-specific-order">Get a Specific Order</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/orders/6"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 
 <blockquote>
@@ -276,7 +276,7 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 
 <h2 id="create-an-order">Create an Order</h2>
 <pre class="highlight shell"><code>curl -X POST <span class="s2">"http://api.nitro.alconost.com/v1/orders"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic {TOKEN}"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span> <span class="se">\</span>
   -d <span class="nv">source_language</span><span class="o">=</span><span class="s2">"en"</span> <span class="se">\</span>
   -d <span class="nv">target_languages</span><span class="o">=[</span><span class="s2">"ru"</span>, <span class="s2">"it"</span><span class="o">]</span> <span class="se">\</span>
   -d <span class="nv">text</span><span class="o">=</span><span class="s2">"Test"</span> <span class="se">\</span>
@@ -359,7 +359,7 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 
 <h2 id="delete-an-order">Delete an Order</h2>
 <pre class="highlight shell"><code>curl -X DELETE <span class="s2">"http://api.nitro.alconost.com/v1/orders/6"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 
 <blockquote>
@@ -396,7 +396,7 @@ You can delete order with QUEUE status only.
 
 <h2 id="get-rates">Get Rates</h2>
 <pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/rates"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 
 <blockquote>
