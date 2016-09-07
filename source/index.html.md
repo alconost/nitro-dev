@@ -24,17 +24,17 @@ Welcome to the Alconost Nitro API! You can use our API to access Nitro API endpo
 ```shell
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here" \
-  -H "Authorization: Basic {TOKEN}"
+  -H "Authorization: Bearer {TOKEN}"
 ```
 
 > Make sure to replace `{TOKEN}` with your token.
 
-Nitro expects the token to be included in all API requests to the server in a Basic authentication header that looks like the following:
+Nitro expects the token to be included in all API requests to the server in authentication header that looks like the following:
 
-`Authorization: Basic {TOKEN}`
+`Authorization: Bearer {TOKEN}`
 
 <aside class="notice">
-You must replace <code>{TOKEN}</code> with your personal token. Personal token is `email:password` Base64 encoded.
+You must replace <code>{TOKEN}</code> with your personal token.
 </aside>
 
 # User
@@ -43,7 +43,7 @@ You must replace <code>{TOKEN}</code> with your personal token. Personal token i
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/user" \
-  -H "Authorization: Basic {TOKEN}"
+  -H "Authorization: Bearer {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
@@ -72,7 +72,7 @@ This endpoint retrieves a user.
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/orders" \
-  -H "Authorization: Basic {TOKEN}"
+  -H "Authorization: Bearer {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
@@ -120,7 +120,7 @@ per_page | Orders count (default: 20)
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/orders/6" \
-  -H "Authorization: Basic {TOKEN}"
+  -H "Authorization: Bearer {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
@@ -159,7 +159,7 @@ ID | The ID of the order to retrieve
 
 ```shell
 curl -X POST "http://api.nitro.alconost.com/v1/orders" \
-  -H "Authorization: Basic {TOKEN}" \
+  -H "Authorization: Bearer {TOKEN}" \
   -d source_language="en" \
   -d target_languages=["ru", "it"] \
   -d text="Test" \
@@ -222,7 +222,7 @@ quality | enum | Translation quality (at this moment EXCELENT quality supported 
 
 ```shell
 curl -X DELETE "http://api.nitro.alconost.com/v1/orders/6" \
-  -H "Authorization: Basic {TOKEN}"
+  -H "Authorization: Bearer {TOKEN}"
 ```
 
 > The above command returns 204 No Content:
@@ -250,7 +250,7 @@ You can delete order with QUEUE status only.
 
 ```shell
 curl "http://api.nitro.alconost.com/v1/rates" \
-  -H "Authorization: Basic {TOKEN}"
+  -H "Authorization: Bearer {TOKEN}"
 ```
 
 > The above command returns JSON structured like this:
