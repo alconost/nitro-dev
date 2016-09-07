@@ -145,7 +145,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 <h1 id="user">User</h1>
 
 <h2 id="get-user">Get User</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/user"</span> <span class="se">\</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/user"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 
@@ -166,12 +166,12 @@ You must replace <code>{TOKEN}</code> with your personal token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.nitro.alconost.com/v1/user</code></p>
+<p><code class="prettyprint">GET https://nitro.alconost.com/api/v1/user</code></p>
 
 <h1 id="orders">Orders</h1>
 
 <h2 id="get-all-orders">Get All Orders</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/orders"</span> <span class="se">\</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 
@@ -206,7 +206,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.nitro.alconost.com/v1/orders</code></p>
+<p><code class="prettyprint">GET https://nitro.alconost.com/api/v1/orders</code></p>
 
 <h3 id="query-parameters">Query Parameters</h3>
 
@@ -230,7 +230,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 </tbody></table>
 
 <h2 id="get-a-specific-order">Get a Specific Order</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/orders/6"</span> <span class="se">\</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 
@@ -258,7 +258,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.nitro.alconost.com/v1/orders/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">GET https://nitro.alconost.com/api/v1/orders/&lt;ID&gt;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -275,7 +275,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 </tbody></table>
 
 <h2 id="create-an-order">Create an Order</h2>
-<pre class="highlight shell"><code>curl -X POST <span class="s2">"http://api.nitro.alconost.com/v1/orders"</span> <span class="se">\</span>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span> <span class="se">\</span>
   -d <span class="nv">source_language</span><span class="o">=</span><span class="s2">"en"</span> <span class="se">\</span>
   -d <span class="nv">target_languages</span><span class="o">=[</span><span class="s2">"ru"</span>, <span class="s2">"it"</span><span class="o">]</span> <span class="se">\</span>
@@ -324,7 +324,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">POST http://api.nitro.alconost.com/v1/orders</code></p>
+<p><code class="prettyprint">POST https://nitro.alconost.com/api/v1/orders</code></p>
 
 <h3 id="attributes">Attributes</h3>
 
@@ -358,7 +358,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 </tbody></table>
 
 <h2 id="delete-an-order">Delete an Order</h2>
-<pre class="highlight shell"><code>curl -X DELETE <span class="s2">"http://api.nitro.alconost.com/v1/orders/6"</span> <span class="se">\</span>
+<pre class="highlight shell"><code>curl -X DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 
@@ -370,7 +370,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">DELETE http://api.nitro.alconost.com/v1/orders/&lt;ID&gt;</code></p>
+<p><code class="prettyprint">DELETE https://nitro.alconost.com/api/v1/orders/&lt;ID&gt;</code></p>
 
 <h3 id="url-parameters">URL Parameters</h3>
 
@@ -395,7 +395,7 @@ You can delete order with QUEUE status only.
 <h1 id="rates">Rates</h1>
 
 <h2 id="get-rates">Get Rates</h2>
-<pre class="highlight shell"><code>curl <span class="s2">"http://api.nitro.alconost.com/v1/rates"</span> <span class="se">\</span>
+<pre class="highlight shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/rates"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 
@@ -413,7 +413,7 @@ You can delete order with QUEUE status only.
 
 <h3 id="http-request">HTTP Request</h3>
 
-<p><code class="prettyprint">GET http://api.nitro.alconost.com/v1/rates</code></p>
+<p><code class="prettyprint">GET https://nitro.alconost.com/api/v1/rates</code></p>
 
           <h1 id="errors">Errors</h1>
 
