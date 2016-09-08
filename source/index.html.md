@@ -216,7 +216,7 @@ Parameter | Type | Description
 source_language | string | Source language
 target_languages | array | Collection of target languages
 text | string | Text to be translated
-quality | enum | Translation quality (at this moment EXCELENT quality supported only)
+quality | enum | Translation quality (at this moment EXCELLENT quality supported only)
 
 ## Delete an Order
 
