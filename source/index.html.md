@@ -10,10 +10,10 @@ toc_footers:
 includes:
   - errors
 
-search: true
+search: false
 ---
 
-# Introduction
+# Introduction  
 
 Welcome to the Alconost Nitro API! You can use our API to access Nitro API endpoints.
 
