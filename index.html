@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
   <head>
@@ -207,8 +208,8 @@
         <img src="images/navbar.png" alt="Navbar" />
       </span>
     </a>
-    <div class="tocify-wrapper">
-      <img src="images/logo.png" alt="Logo" />
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
         </div>
@@ -216,7 +217,49 @@
           <input type="text" class="search" id="input-search" placeholder="Search">
         </div>
         <ul class="search-results"></ul>
-      <div id="toc">
+      <div id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#user" class="toc-h1 toc-link" data-title="User">User</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-user" class="toc-h2 toc-link" data-title="User">Get User</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#orders" class="toc-h1 toc-link" data-title="Orders">Orders</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-orders" class="toc-h2 toc-link" data-title="Orders">Get All Orders</a>
+                  </li>
+                  <li>
+                    <a href="#get-a-specific-order" class="toc-h2 toc-link" data-title="Orders">Get a Specific Order</a>
+                  </li>
+                  <li>
+                    <a href="#create-an-order" class="toc-h2 toc-link" data-title="Orders">Create an Order</a>
+                  </li>
+                  <li>
+                    <a href="#delete-an-order" class="toc-h2 toc-link" data-title="Orders">Delete an Order</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#rates" class="toc-h1 toc-link" data-title="Rates">Rates</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-rates" class="toc-h2 toc-link" data-title="Rates">Get Rates</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
       </div>
         <ul class="toc-footer">
             <li><a href='mailto:nitro@alconost.com'>Contact Us</a></li>
@@ -225,12 +268,9 @@
     <div class="page-wrapper">
       <div class="dark-box"></div>
       <div class="content">
-        <h1 id="introduction">Introduction</h1>
-
+        <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Alconost Nitro API! You can use our API to access Nitro API endpoints.</p>
-
-<h1 id="authentication">Authentication</h1>
-
+<h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
@@ -239,21 +279,17 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 <blockquote>
-<p>Make sure to replace <code class="prettyprint">{TOKEN}</code> with your token.</p>
+<p>Make sure to replace <code>{TOKEN}</code> with your token.</p>
 </blockquote>
 
 <p>Nitro expects the token to be included in all API requests to the server in authentication header that looks like the following:</p>
 
-<p><code class="prettyprint">Authorization: Bearer {TOKEN}</code></p>
+<p><code>Authorization: Bearer {TOKEN}</code></p>
 
 <aside class="notice">
 You must replace <code>{TOKEN}</code> with your personal token.
 </aside>
-
-<h1 id="user">User</h1>
-
-<h2 id="get-user">Get User</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/user"</span> <span class="se">\</span>
+<h1 id='user'>User</h1><h2 id='get-user'>Get User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/user"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 <blockquote>
@@ -269,15 +305,9 @@ You must replace <code>{TOKEN}</code> with your personal token.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a user.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://nitro.alconost.com/api/v1/user</code></p>
-
-<h1 id="orders">Orders</h1>
-
-<h2 id="get-all-orders">Get All Orders</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://nitro.alconost.com/api/v1/user</code></p>
+<h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get All Orders</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 <blockquote>
@@ -307,13 +337,9 @@ You must replace <code>{TOKEN}</code> with your personal token.
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all user orders.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://nitro.alconost.com/api/v1/orders</code></p>
-
-<h3 id="query-parameters">Query Parameters</h3>
-
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://nitro.alconost.com/api/v1/orders</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -332,9 +358,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 <td></td>
 </tr>
 </tbody></table>
-
-<h2 id="get-a-specific-order">Get a Specific Order</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
+<h2 id='get-a-specific-order'>Get a Specific Order</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 <blockquote>
@@ -357,13 +381,9 @@ You must replace <code>{TOKEN}</code> with your personal token.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves a specific order.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://nitro.alconost.com/api/v1/orders/&lt;ID&gt;</code></p>
-
-<h3 id="url-parameters">URL Parameters</h3>
-
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://nitro.alconost.com/api/v1/orders/&lt;ID&gt;</code></p>
+<h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -375,9 +395,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 <td>The ID of the order to retrieve</td>
 </tr>
 </tbody></table>
-
-<h2 id="create-an-order">Create an Order</h2>
-<pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
+<h2 id='create-an-order'>Create an Order</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span> <span class="se">\</span>
   -d <span class="nv">source_language</span><span class="o">=</span><span class="s2">"en"</span> <span class="se">\</span>
   -d <span class="nv">target_languages</span><span class="o">=[</span><span class="s2">"ru"</span>, <span class="s2">"it"</span><span class="o">]</span> <span class="se">\</span>
@@ -421,13 +439,9 @@ You must replace <code>{TOKEN}</code> with your personal token.
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new order.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">POST https://nitro.alconost.com/api/v1/orders</code></p>
-
-<h3 id="attributes">Attributes</h3>
-
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://nitro.alconost.com/api/v1/orders</code></p>
+<h3 id='attributes'>Attributes</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -456,9 +470,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 <td>Translation quality (at this moment EXCELLENT quality supported only)</td>
 </tr>
 </tbody></table>
-
-<h2 id="delete-an-order">Delete an Order</h2>
-<pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
+<h2 id='delete-an-order'>Delete an Order</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 <blockquote>
@@ -466,13 +478,9 @@ You must replace <code>{TOKEN}</code> with your personal token.
 </blockquote>
 
 <p>This endpoint deletes a specific order.</p>
-
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">DELETE https://nitro.alconost.com/api/v1/orders/&lt;ID&gt;</code></p>
-
-<h3 id="url-parameters">URL Parameters</h3>
-
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>DELETE https://nitro.alconost.com/api/v1/orders/&lt;ID&gt;</code></p>
+<h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -490,11 +498,7 @@ You must replace <code>{TOKEN}</code> with your personal token.
 <aside class="notice">
 You can delete order with QUEUE status only.
 </aside>
-
-<h1 id="rates">Rates</h1>
-
-<h2 id="get-rates">Get Rates</h2>
-<pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/rates"</span> <span class="se">\</span>
+<h1 id='rates'>Rates</h1><h2 id='get-rates'>Get Rates</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/rates"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
 <blockquote>
@@ -507,14 +511,12 @@ You can delete order with QUEUE status only.
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all rates.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://nitro.alconost.com/api/v1/rates</code></p>
+<h1 id='errors'>Errors</h1>
+<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
 
-<h3 id="http-request">HTTP Request</h3>
-
-<p><code class="prettyprint">GET https://nitro.alconost.com/api/v1/rates</code></p>
-
-          <h1 id="errors">Errors</h1>
-
-<p>The Nitro API uses the following error codes:</p>
+<p>The Kittn API uses the following error codes:</p>
 
 <table><thead>
 <tr>
@@ -524,43 +526,47 @@ You can delete order with QUEUE status only.
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
+<td>Bad Request -- Your request sucks</td>
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
+<td>Unauthorized -- Your API key is wrong</td>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden &ndash; The resource requested is hidden for administrators only</td>
+<td>Forbidden -- The kitten requested is hidden for administrators only</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found &ndash; The specified resource could not be found</td>
+<td>Not Found -- The specified kitten could not be found</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a resource with an invalid method</td>
+<td>Method Not Allowed -- You tried to access a kitten with an invalid method</td>
 </tr>
 <tr>
 <td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
+<td>Not Acceptable -- You requested a format that isn&#39;t json</td>
 </tr>
 <tr>
 <td>410</td>
-<td>Gone &ndash; The resource requested has been removed from our servers</td>
+<td>Gone -- The kitten requested has been removed from our servers</td>
+</tr>
+<tr>
+<td>418</td>
+<td>I&#39;m a teapot</td>
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many resources! Slow down!</td>
+<td>Too Many Requests -- You&#39;re requesting too many kittens! Slow down!</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
 </tr>
 <tr>
 <td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarily offline for maintenance. Please try again later.</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
 </tr>
 </tbody></table>
 
