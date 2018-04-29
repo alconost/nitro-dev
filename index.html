@@ -280,11 +280,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 
 <p>Nitro expects the token to be included in all API requests to the server in authentication header that looks like the following:</p>
 
-<p><code>Authorization: Bearer {TOKEN}</code></p>
-
-<aside class="notice">
-You must replace <code>{TOKEN}</code> with your personal token.
-</aside>
+<p><code>Authorization: Basic &lt;base64(&quot;username:password&quot;)&gt;</code></p>
 <h1 id='user'>User</h1><h2 id='get-user'>Get User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/user"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
 </code></pre>
