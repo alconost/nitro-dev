@@ -272,17 +272,13 @@
 </blockquote>
 <pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Basic &lt;base64("</span>email:password<span class="s2">")&gt;"</span>
 </code></pre>
-<blockquote>
-<p>Make sure to replace <code>{TOKEN}</code> with your token.</p>
-</blockquote>
+<p>Nitro expects credentials to be included in all API requests to the server in authentication header that looks like the following:</p>
 
-<p>Nitro expects the token to be included in all API requests to the server in authentication header that looks like the following:</p>
-
-<p><code>Authorization: Basic &lt;base64(&quot;username:password&quot;)&gt;</code></p>
+<p><code>Authorization: Basic &lt;base64(&quot;email:password&quot;)&gt;</code></p>
 <h1 id='user'>User</h1><h2 id='get-user'>Get User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/user"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -300,7 +296,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://nitro.alconost.com/api/v1/user</code></p>
 <h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get All Orders</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -351,7 +347,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-order'>Get a Specific Order</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Bearer ZW1haWw6cGFzc3dvcmQ="</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -388,7 +384,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 </tr>
 </tbody></table>
 <h2 id='create-an-order'>Create an Order</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Bearer ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
   -d <span class="nv">source_language</span><span class="o">=</span><span class="s2">"en"</span> <span class="se">\</span>
   -d <span class="nv">target_languages</span><span class="o">=[</span><span class="s2">"ru"</span>, <span class="s2">"it"</span><span class="o">]</span> <span class="se">\</span>
   -d <span class="nv">text</span><span class="o">=</span><span class="s2">"Test"</span> <span class="se">\</span>
@@ -463,7 +459,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 </tr>
 </tbody></table>
 <h2 id='delete-an-order'>Delete an Order</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Bearer ZW1haWw6cGFzc3dvcmQ="</span>
 </code></pre>
 <blockquote>
 <p>The above command returns 204 No Content:</p>
@@ -491,7 +487,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 You can delete order with QUEUE status only.
 </aside>
 <h1 id='rates'>Rates</h1><h2 id='get-rates'>Get Rates</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/rates"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Bearer {TOKEN}"</span>
+  -H <span class="s2">"Authorization: Bearer ZW1haWw6cGFzc3dvcmQ=}"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
