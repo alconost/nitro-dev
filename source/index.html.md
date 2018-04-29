@@ -31,11 +31,7 @@ curl "api_endpoint_here" \
 
 Nitro expects the token to be included in all API requests to the server in authentication header that looks like the following:
 
-`Authorization: Bearer {TOKEN}`
-
-<aside class="notice">
-You must replace <code>{TOKEN}</code> with your personal token.
-</aside>
+`Authorization: Basic <base64("username:password")>`
 
 # User
 
