@@ -512,7 +512,7 @@ You can delete order with QUEUE status only.
 </thead><tbody>
 <tr>
 <td>400</td>
-<td>Bad Request -- Your request sucks</td>
+<td>Bad Request -- Something went wrong, see the response body for details (error code, description)</td>
 </tr>
 <tr>
 <td>401</td>
@@ -545,6 +545,30 @@ You can delete order with QUEUE status only.
 <tr>
 <td>503</td>
 <td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>In case of 400 (Bad Request) response code, there is an error object returned in the response body. The error object contains the error code, error description and, optionally, additional parameters related to the error. E.g:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"HUMAN_READABLE_ERROR_CODE"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Human readable description of the error"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"param1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error specific additional parameter 1"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"param2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error specific additional parameter 2"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The 400 error codes are:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>INSUFFICIENT_FUNDS</td>
+<td>There&#39;s not enough funds on the account to place an order</td>
 </tr>
 </tbody></table>
 
