@@ -31,3 +31,4 @@ The 400 error codes are:
 Error Code | Meaning
 ---------- | -------
 INSUFFICIENT_FUNDS | There's not enough funds on the account to place an order
+WRONG_ORDER_STATUS | The order is not in the QUEUE status (already taken or completed) and you try to delete it
