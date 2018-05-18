@@ -234,7 +234,7 @@ Parameter | Type | Description
 ID | integer | The ID of the order to be deleted
 
 <aside class="notice">
-You can delete order with QUEUE status only.
+You can delete orders with QUEUE status only.
 </aside>
 
 
