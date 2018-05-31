@@ -166,33 +166,23 @@ curl -X POST "https://nitro.alconost.com/api/v1/orders" \
 [
   {
     "id": 6,
-    "source_text": "Test",
     "status": "QUEUE",
-    "hint": "",
     "snippet": "Test",
     "source_language": "en",
     "target_language": "ru",
     "volume": 4,
     "price": 0.04,
     "created_at": "2016-01-29T05:52:17.840197Z",
-    "accepted_at": "0001-01-01T00:00:00Z",
-    "completed_at": "0001-01-01T00:00:00Z",
-    "quality": "EXCELLENT"
   },
   {
     "id": 7,
-    "source_text": "Test",
     "status": "QUEUE",
-    "hint": "",
     "snippet": "Test",
     "source_language": "en",
     "target_language": "it",
     "volume": 4,
     "price": 0.04,
     "created_at": "2016-01-29T05:52:17.840197Z",
-    "accepted_at": "0001-01-01T00:00:00Z",
-    "completed_at": "0001-01-01T00:00:00Z",
-    "quality": "EXCELLENT"
   }
 ]
 ```
