@@ -396,33 +396,23 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"source_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QUEUE"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
     </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accepted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCELLENT"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"source_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QUEUE"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"it"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
     </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w">
     </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accepted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCELLENT"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -484,7 +474,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 </tbody></table>
 
 <aside class="notice">
-You can delete order with QUEUE status only.
+You can delete orders with QUEUE status only.
 </aside>
 <h1 id='rates'>Rates</h1><h2 id='get-rates'>Get Rates</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/rates"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ=}"</span>
