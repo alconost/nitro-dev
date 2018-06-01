@@ -149,6 +149,44 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the order to retrieve
 
+## Translate
+
+```shell
+curl -X POST "https://nitro.alconost.com/api/v1/translate" \
+  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=" \
+  -d source_language="en" \
+  -d target_languages=["ru", "it"] \
+  -d text="Text to translate" \
+  -d hint="Hint for translator, context" \
+  -d quality="EXCELLENT"
+```
+> The above command returns JSON structured like this:
+
+```json
+{
+	"orders": [
+    {
+			"id": 6,
+			"source_language": "en",
+			"target_language": "ru",
+			"price": 0.04,
+			"created_at": "2016-01-29T05:52:17.840197Z"
+		},
+		{
+			"id": 7,
+			"source_language": "en",
+			"target_language": "it",
+			"price": 0.05,
+			"created_at": "2016-01-29T05:52:17.840197Z"
+		}
+	],
+	"text": "Text to translate",
+	"hint": "Hint for translator, context",
+	"volume": 4,
+	"quality": "EXCELLENT"
+}
+```
+
 ## Create an Order
 
 ```shell
@@ -175,7 +213,7 @@ curl -X POST "https://nitro.alconost.com/api/v1/orders" \
     "volume": 4,
     "price": 0.04,
     "quality": "EXCELLENT",
-    "created_at": "2016-01-29T05:52:17.840197Z",
+    "created_at": "2016-01-29T05:52:17.840197Z"
   },
   {
     "id": 7,
@@ -188,7 +226,7 @@ curl -X POST "https://nitro.alconost.com/api/v1/orders" \
     "volume": 4,
     "price": 0.04,
     "quality": "EXCELLENT",
-    "created_at": "2016-01-29T05:52:17.840197Z",
+    "created_at": "2016-01-29T05:52:17.840197Z"
   }
 ]
 ```
