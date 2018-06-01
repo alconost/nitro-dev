@@ -392,7 +392,6 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
   -d <span class="nv">target_languages</span><span class="o">=[</span><span class="s2">"ru"</span>, <span class="s2">"it"</span><span class="o">]</span> <span class="se">\</span>
   -d <span class="nv">text</span><span class="o">=</span><span class="s2">"Text to translate"</span> <span class="se">\</span>
   -d <span class="nv">hint</span><span class="o">=</span><span class="s2">"Hint for translator"</span> <span class="se">\</span>
-  -d <span class="nv">quality</span><span class="o">=</span><span class="s2">"EXCELLENT"</span>
 </code></pre>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -416,8 +415,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
   </span><span class="p">],</span><span class="w">
   </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text to translate"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hint for translator"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCELLENT"</span><span class="w">
+  </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint sends the text for translation and creates a list of orders.</p>
