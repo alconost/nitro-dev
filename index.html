@@ -238,6 +238,9 @@
                     <a href="#get-a-specific-order" class="toc-h2 toc-link" data-title="Orders">Get a Specific Order</a>
                   </li>
                   <li>
+                    <a href="#translate" class="toc-h2 toc-link" data-title="Orders">Translate</a>
+                  </li>
+                  <li>
                     <a href="#create-an-order" class="toc-h2 toc-link" data-title="Orders">Create an Order</a>
                   </li>
                   <li>
@@ -383,6 +386,77 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <td>The ID of the order to retrieve</td>
 </tr>
 </tbody></table>
+<h2 id='translate'>Translate</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://nitro.alconost.com/api/v1/translate"</span> <span class="se">\</span>
+  -H <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
+  -d <span class="nv">source_language</span><span class="o">=</span><span class="s2">"en"</span> <span class="se">\</span>
+  -d <span class="nv">target_languages</span><span class="o">=[</span><span class="s2">"ru"</span>, <span class="s2">"it"</span><span class="o">]</span> <span class="se">\</span>
+  -d <span class="nv">text</span><span class="o">=</span><span class="s2">"Text to translate"</span> <span class="se">\</span>
+  -d <span class="nv">hint</span><span class="o">=</span><span class="s2">"Hint for translator"</span> <span class="se">\</span>
+  -d <span class="nv">quality</span><span class="o">=</span><span class="s2">"EXCELLENT"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"it"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text to translate"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hint for translator"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCELLENT"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint sends the text for translation and creates a list of orders.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>POST https://nitro.alconost.com/api/v1/translate</code></p>
+<h3 id='attributes'>Attributes</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>source_language</td>
+<td>string</td>
+<td>Source language</td>
+</tr>
+<tr>
+<td>target_languages</td>
+<td>array</td>
+<td>Collection of target languages</td>
+</tr>
+<tr>
+<td>text</td>
+<td>string</td>
+<td>Text to be translated</td>
+</tr>
+<tr>
+<td>hint</td>
+<td>string</td>
+<td>Hint for translator</td>
+</tr>
+<tr>
+<td>quality</td>
+<td>enum</td>
+<td>Translation quality (at this moment EXCELLENT quality supported only)</td>
+</tr>
+</tbody></table>
 <h2 id='create-an-order'>Create an Order</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
   -H <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
   -d <span class="nv">source_language</span><span class="o">=</span><span class="s2">"en"</span> <span class="se">\</span>
@@ -405,7 +479,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
     </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
     </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w">
     </span><span class="s2">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCELLENT"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
     </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
@@ -418,14 +492,14 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
     </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
     </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w">
     </span><span class="s2">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCELLENT"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint creates a new order.</p>
-<h3 id='http-request-4'>HTTP Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>POST https://nitro.alconost.com/api/v1/orders</code></p>
-<h3 id='attributes'>Attributes</h3>
+<h3 id='attributes-2'>Attributes</h3>
 <table><thead>
 <tr>
 <th>Parameter</th>
@@ -462,7 +536,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 </blockquote>
 
 <p>This endpoint deletes a specific order.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>DELETE https://nitro.alconost.com/api/v1/orders/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
@@ -495,7 +569,7 @@ You can delete orders with QUEUE status only.
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
 <p>This endpoint retrieves all rates.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://nitro.alconost.com/api/v1/rates</code></p>
 <h1 id='errors'>Errors</h1>
 <p>The Nitro API uses the following error codes:</p>
