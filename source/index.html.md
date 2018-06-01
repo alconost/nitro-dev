@@ -157,35 +157,41 @@ curl -X POST "https://nitro.alconost.com/api/v1/translate" \
   -d source_language="en" \
   -d target_languages=["ru", "it"] \
   -d text="Text to translate" \
-  -d hint="Hint for translator, context" \
+  -d hint="Hint for translator" \
   -d quality="EXCELLENT"
 ```
 > The above command returns JSON structured like this:
 
 ```json
 {
-	"orders": [
+  "orders": [
     {
-			"id": 6,
-			"source_language": "en",
-			"target_language": "ru",
-			"price": 0.04,
-			"created_at": "2016-01-29T05:52:17.840197Z"
-		},
-		{
-			"id": 7,
-			"source_language": "en",
-			"target_language": "it",
-			"price": 0.05,
-			"created_at": "2016-01-29T05:52:17.840197Z"
-		}
-	],
-	"text": "Text to translate",
-	"hint": "Hint for translator, context",
-	"volume": 4,
-	"quality": "EXCELLENT"
+      "id": 6,
+      "source_language": "en",
+      "target_language": "ru",
+      "price": 0.04,
+      "created_at": "2016-01-29T05:52:17.840197Z"
+    },
+    {
+      "id": 7,
+      "source_language": "en",
+      "target_language": "it",
+      "price": 0.05,
+      "created_at": "2016-01-29T05:52:17.840197Z"
+    }
+  ],
+  "text": "Text to translate",
+  "hint": "Hint for translator",
+  "volume": 4,
+  "quality": "EXCELLENT"
 }
 ```
+This endpoint send the text for translation and creates a list of orders.
+
+### HTTP Request
+
+`POST https://nitro.alconost.com/api/v1/translate`
+
 
 ## Create an Order
 
