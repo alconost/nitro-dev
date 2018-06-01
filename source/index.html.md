@@ -186,12 +186,21 @@ curl -X POST "https://nitro.alconost.com/api/v1/translate" \
   "quality": "EXCELLENT"
 }
 ```
-This endpoint send the text for translation and creates a list of orders.
+This endpoint sends the text for translation and creates a list of orders.
 
 ### HTTP Request
 
 `POST https://nitro.alconost.com/api/v1/translate`
 
+### Attributes
+
+Parameter | Type | Description
+--------- | ---- | -----------
+source_language | string | Source language
+target_languages | array | Collection of target languages
+text | string | Text to be translated
+hint | string | Hint for translator
+quality | enum | Translation quality (at this moment EXCELLENT quality supported only)
 
 ## Create an Order
 
