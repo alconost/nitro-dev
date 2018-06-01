@@ -157,7 +157,7 @@ curl -X POST "https://nitro.alconost.com/api/v1/translate" \
   -d source_language="en" \
   -d target_languages=["ru", "it"] \
   -d text="Text to translate" \
-  -d hint="Hint for translator" \
+  -d hint="Hint for translator"
 ```
 > The above command returns JSON structured like this:
 
