@@ -200,65 +200,6 @@ text | string | Text to be translated
 hint | string | Hint for translator
 quality | enum | Translation quality (at this moment EXCELLENT quality supported only)
 
-## Create an Order
-
-```shell
-curl -X POST "https://nitro.alconost.com/api/v1/orders" \
-  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=" \
-  -d source_language="en" \
-  -d target_languages=["ru", "it"] \
-  -d text="Test" \
-  -d quality="EXCELLENT"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 6,
-    "hint": "",
-    "status": "QUEUE",
-    "text": "Test",
-    "snippet": "Test",
-    "source_language": "en",
-    "target_language": "ru",
-    "volume": 4,
-    "price": 0.04,
-    "quality": "EXCELLENT",
-    "created_at": "2016-01-29T05:52:17.840197Z"
-  },
-  {
-    "id": 7,
-    "hint": "",
-    "status": "QUEUE",
-    "text": "Test",
-    "snippet": "Test",
-    "source_language": "en",
-    "target_language": "it",
-    "volume": 4,
-    "price": 0.04,
-    "quality": "EXCELLENT",
-    "created_at": "2016-01-29T05:52:17.840197Z"
-  }
-]
-```
-
-This endpoint creates a new order.
-
-### HTTP Request
-
-`POST https://nitro.alconost.com/api/v1/orders`
-
-### Attributes
-
-Parameter | Type | Description
---------- | ---- | -----------
-source_language | string | Source language
-target_languages | array | Collection of target languages
-text | string | Text to be translated
-quality | enum | Translation quality (at this moment EXCELLENT quality supported only)
-
 ## Delete an Order
 
 ```shell
