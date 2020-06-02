@@ -67,7 +67,7 @@ This endpoint retrieves a user.
 ## Get All Orders
 
 ```shell
-curl -X GET https://nitro.alconost.com/api/v1/orders 
+curl https://nitro.alconost.com/api/v1/orders 
   -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ="
   -H "Content-Type: application/json" \
 
@@ -117,7 +117,7 @@ per_page | Orders count (default: 20)
 ## Get a Specific Order
 
 ```shell
-curl -X GET https://nitro.alconost.com/api/v1/orders 
+curl https://nitro.alconost.com/api/v1/orders/6
   -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="
   -H "Content-Type: application/json" \
 
@@ -158,7 +158,7 @@ ID | The ID of the order to retrieve
 ## Translate
 
 ```shell
-curl -X POST "https://nitro.alconost.com/api/v1/translate" 
+curl "https://nitro.alconost.com/api/v1/translate" 
   -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="
   -H "Content-Type:application/json" \
 
