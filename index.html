@@ -272,13 +272,15 @@
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic &lt;base64("</span>email:password<span class="s2">")&gt;"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic &lt;base64("</span>email:password<span class="s2">")&gt;"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
 </code></pre></div>
 <p>Nitro expects credentials to be included in all API requests to the server in authentication header that looks like the following:</p>
 
 <p><code>Authorization: Basic &lt;base64(&quot;email:password&quot;)&gt;</code></p>
 <h1 id='user'>User</h1><h2 id='get-user'>Get User</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/user"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -296,7 +298,9 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://nitro.alconost.com/api/v1/user</code></p>
 <h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get All Orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
+
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -347,7 +351,9 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-order'>Get a Specific Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
+
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -383,12 +389,14 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <td>The ID of the order to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='translate'>Translate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://nitro.alconost.com/api/v1/translate"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
-  <span class="nt">-d</span> <span class="nv">source_language</span><span class="o">=</span><span class="s2">"en"</span> <span class="se">\</span>
-  <span class="nt">-d</span> <span class="nv">target_languages</span><span class="o">=[</span><span class="s2">"ru"</span>, <span class="s2">"it"</span><span class="o">]</span> <span class="se">\</span>
-  <span class="nt">-d</span> <span class="nv">text</span><span class="o">=</span><span class="s2">"Text to translate"</span> <span class="se">\</span>
-  <span class="nt">-d</span> <span class="nv">hint</span><span class="o">=</span><span class="s2">"Hint for translator"</span>
+<h2 id='translate'>Translate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/translate"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="s1">'{
+      "source_language": "en",
+      "target_languages": ["ru", "it"],
+      "text": "Text to translate"
+      }'</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -453,7 +461,9 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 </tr>
 </tbody></table>
 <h2 id='delete-an-order'>Delete an Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
+
 </code></pre></div>
 <blockquote>
 <p>The above command returns 204 No Content:</p>
@@ -481,7 +491,9 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 You can delete orders with QUEUE status only.
 </aside>
 <h1 id='rates'>Rates</h1><h2 id='get-rates'>Get Rates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/rates"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ=}"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ=}"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
+
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
