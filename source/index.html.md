@@ -38,7 +38,7 @@ Nitro expects credentials to be included in all API requests to the server in au
 
 ```shell
 curl "https://nitro.alconost.com/api/v1/user" \
-  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ="\
+  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=" \
   -H "Content-Type: application/json" 
 ```
 
@@ -118,7 +118,7 @@ per_page | Orders count (default: 20)
 
 ```shell
 curl "https://nitro.alconost.com/api/v1/orders/6" \
-  -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="\
+  -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ=" \
   -H "Content-Type: application/json" 
 
 ```
@@ -159,7 +159,7 @@ ID | The ID of the order to retrieve
 
 ```shell
 curl "https://nitro.alconost.com/api/v1/translate" \
-  -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="\
+  -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ=" \
   -H "Content-Type:application/json" \
   -d '{
       "source_language": "en",
@@ -211,8 +211,8 @@ quality | enum | Translation quality (at this moment EXCELLENT quality supported
 ## Delete an Order
 
 ```shell
-curl "https://nitro.alconost.com/api/v1/orders/6" \
-  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ="\
+curl -X DELETE "https://nitro.alconost.com/api/v1/orders/6" \
+  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=" \
   -H "Content-Type: application/json" 
 
 ```
@@ -242,7 +242,7 @@ You can delete orders with QUEUE status only.
 
 ```shell
 curl "https://nitro.alconost.com/api/v1/rates" \
-  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=}"\
+  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=}" \
   -H "Content-Type: application/json" 
 
 ```
