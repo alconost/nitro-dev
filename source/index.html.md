@@ -67,9 +67,10 @@ This endpoint retrieves a user.
 ## Get All Orders
 
 ```shell
-curl "https://nitro.alconost.com/api/v1/orders" \
+curl -X GET https://nitro.alconost.com/api/v1/orders 
   -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ="
-  -H "Content-Type: application/json"
+  -H "Content-Type: application/json" \
+
 ```
 
 > The above command returns JSON structured like this:
@@ -118,7 +119,8 @@ per_page | Orders count (default: 20)
 ```shell
 curl -X GET https://nitro.alconost.com/api/v1/orders 
   -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="
-  -H "Content-Type: application/json"
+  -H "Content-Type: application/json" \
+
 ```
 
 > The above command returns JSON structured like this:
@@ -158,7 +160,8 @@ ID | The ID of the order to retrieve
 ```shell
 curl -X POST "https://nitro.alconost.com/api/v1/translate" 
   -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="
-  -H "Content-Type:application/json"
+  -H "Content-Type:application/json" \
+
   d '{
       "source_language": "en",
       "target_languages": ["ru", "it"],
@@ -211,7 +214,8 @@ quality | enum | Translation quality (at this moment EXCELLENT quality supported
 ```shell
 curl -X DELETE "https://nitro.alconost.com/api/v1/orders/6" \
   -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ="
-  -H "Content-Type: application/json"
+  -H "Content-Type: application/json" \
+
 ```
 
 > The above command returns 204 No Content:
@@ -240,7 +244,8 @@ You can delete orders with QUEUE status only.
 ```shell
 curl "https://nitro.alconost.com/api/v1/rates" \
   -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=}"
-  -H "Content-Type: application/json"
+  -H "Content-Type: application/json" \
+
 ```
 
 > The above command returns JSON structured like this:
