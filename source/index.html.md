@@ -160,13 +160,12 @@ ID | The ID of the order to retrieve
 ```shell
 curl "https://nitro.alconost.com/api/v1/translate" \
   -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="\
-  -H "Content-Type:application/json" 
-
-  d '{
+  -H "Content-Type:application/json" \
+  -d "{
       "source_language": "en",
       "target_languages": ["ru", "it"],
       "text": "Text to translate"
-      }'
+      }"
 ```
 > The above command returns JSON structured like this:
 
@@ -212,7 +211,7 @@ quality | enum | Translation quality (at this moment EXCELLENT quality supported
 ## Delete an Order
 
 ```shell
-curl -X DELETE "https://nitro.alconost.com/api/v1/orders/6" \
+curl "https://nitro.alconost.com/api/v1/orders/6" \
   -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ="\
   -H "Content-Type: application/json" 
 
