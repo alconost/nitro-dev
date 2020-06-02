@@ -161,11 +161,11 @@ ID | The ID of the order to retrieve
 curl "https://nitro.alconost.com/api/v1/translate" \
   -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="\
   -H "Content-Type:application/json" \
-  -d "{
+  -d '{
       "source_language": "en",
       "target_languages": ["ru", "it"],
       "text": "Text to translate"
-      }"
+      }'
 ```
 > The above command returns JSON structured like this:
 
