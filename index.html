@@ -42,7 +42,7 @@
 .highlight .cs {
   color: #75715e;
 }
-.highlight .c, .highlight .cd {
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
   color: #75715e;
 }
 .highlight .err {
@@ -126,7 +126,7 @@
 .highlight .s1 {
   color: #e6db74;
 }
-.highlight .s {
+.highlight .s, .highlight .sa, .highlight .dl {
   color: #e6db74;
 }
 .highlight .na {
@@ -141,16 +141,13 @@
 .highlight .ne {
   color: #a6e22e;
 }
-.highlight .nf {
+.highlight .nf, .highlight .fm {
   color: #a6e22e;
 }
 .highlight .vc {
   color: #ffffff;
 }
 .highlight .nn {
-  color: #ffffff;
-}
-.highlight .nl {
   color: #ffffff;
 }
 .highlight .ni {
@@ -165,7 +162,7 @@
 .highlight .vi {
   color: #ffffff;
 }
-.highlight .nv {
+.highlight .nv, .highlight .vm {
   color: #ffffff;
 }
 .highlight .w {
@@ -176,6 +173,9 @@
 }
 .highlight .n, .highlight .py, .highlight .nx {
   color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
 }
 .highlight .ow {
   color: #f92672;
@@ -196,24 +196,24 @@
   color: #f92672;
 }
     </style>
-    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
-      <script src="javascripts/all_nosearch.js"></script>
+    <link href="stylesheets/screen-0a7c4629.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-c427a123.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all_nosearch-c275c2f6.js"></script>
   </head>
 
   <body class="index" data-languages="[&quot;shell&quot;]">
     <a href="#" id="nav-button">
       <span>
         NAV
-        <img src="images/navbar.png" alt="Navbar" />
+        <img src="images/navbar-cad8cdcb.png" alt="" />
       </span>
     </a>
     <div class="toc-wrapper">
-      <img src="images/logo.png" class="logo" alt="Logo" />
+      <img src="images/logo-5e93765b.png" class="logo" alt="" />
         <div class="lang-selector">
               <a href="#" data-language-name="shell">shell</a>
         </div>
-      <div id="toc" class="toc-list-h1">
+      <ul id="toc" class="toc-list-h1">
           <li>
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
@@ -224,7 +224,7 @@
             <a href="#user" class="toc-h1 toc-link" data-title="User">User</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-user" class="toc-h2 toc-link" data-title="User">Get User</a>
+                    <a href="#get-user" class="toc-h2 toc-link" data-title="Get User">Get User</a>
                   </li>
               </ul>
           </li>
@@ -232,16 +232,16 @@
             <a href="#orders" class="toc-h1 toc-link" data-title="Orders">Orders</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-all-orders" class="toc-h2 toc-link" data-title="Orders">Get All Orders</a>
+                    <a href="#get-all-orders" class="toc-h2 toc-link" data-title="Get All Orders">Get All Orders</a>
                   </li>
                   <li>
-                    <a href="#get-a-specific-order" class="toc-h2 toc-link" data-title="Orders">Get a Specific Order</a>
+                    <a href="#get-a-specific-order" class="toc-h2 toc-link" data-title="Get a Specific Order">Get a Specific Order</a>
                   </li>
                   <li>
-                    <a href="#translate" class="toc-h2 toc-link" data-title="Orders">Translate</a>
+                    <a href="#translate" class="toc-h2 toc-link" data-title="Translate">Translate</a>
                   </li>
                   <li>
-                    <a href="#delete-an-order" class="toc-h2 toc-link" data-title="Orders">Delete an Order</a>
+                    <a href="#delete-an-order" class="toc-h2 toc-link" data-title="Delete an Order">Delete an Order</a>
                   </li>
               </ul>
           </li>
@@ -249,14 +249,14 @@
             <a href="#rates" class="toc-h1 toc-link" data-title="Rates">Rates</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-rates" class="toc-h2 toc-link" data-title="Rates">Get Rates</a>
+                    <a href="#get-rates" class="toc-h2 toc-link" data-title="Get Rates">Get Rates</a>
                   </li>
               </ul>
           </li>
           <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
-      </div>
+      </ul>
         <ul class="toc-footer">
             <li><a href='mailto:nitro@alconost.com'>Contact Us</a></li>
         </ul>
@@ -270,60 +270,60 @@
 <blockquote>
 <p>To authorize, use this code:</p>
 </blockquote>
-<pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
 curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic &lt;base64("</span>email:password<span class="s2">")&gt;"</span>
-</code></pre>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic &lt;base64("</span>email:password<span class="s2">")&gt;"</span>
+</code></pre></div>
 <p>Nitro expects credentials to be included in all API requests to the server in authentication header that looks like the following:</p>
 
 <p><code>Authorization: Basic &lt;base64(&quot;email:password&quot;)&gt;</code></p>
-<h1 id='user'>User</h1><h2 id='get-user'>Get User</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/user"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
-</code></pre>
+<h1 id='user'>User</h1><h2 id='get-user'>Get User</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/user"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@alconost.com"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nitro"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"balance_overdraft_allowed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"reserved"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.24</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">174.46</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@alconost.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nitro"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"balance_overdraft_allowed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reserved"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.24</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">174.46</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves a user.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://nitro.alconost.com/api/v1/user</code></p>
-<h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get All Orders</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
-</code></pre>
+<h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get All Orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QUEUE"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accepted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QUEUE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accepted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DONE"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"it"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accepted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-30T012:45:01.223137Z"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-30T13:00:47.312484Z"</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DONE"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"it"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"accepted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-30T012:45:01.223137Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-30T13:00:47.312484Z"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves all user orders.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://nitro.alconost.com/api/v1/orders</code></p>
@@ -346,28 +346,28 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <td></td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-order'>Get a Specific Order</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
-</code></pre>
+<h2 id='get-a-specific-order'>Get a Specific Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"source_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QUEUE"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"accepted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCELLENT"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"source_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"QUEUE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"accepted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCELLENT"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves a specific order.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://nitro.alconost.com/api/v1/orders/&lt;ID&gt;</code></p>
@@ -383,38 +383,38 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <td>The ID of the order to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='translate'>Translate</h2><pre class="highlight shell tab-shell"><code>curl -X POST <span class="s2">"https://nitro.alconost.com/api/v1/translate"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
-  -d <span class="nv">source_language</span><span class="o">=</span><span class="s2">"en"</span> <span class="se">\</span>
-  -d <span class="nv">target_languages</span><span class="o">=[</span><span class="s2">"ru"</span>, <span class="s2">"it"</span><span class="o">]</span> <span class="se">\</span>
-  -d <span class="nv">text</span><span class="o">=</span><span class="s2">"Text to translate"</span> <span class="se">\</span>
-  -d <span class="nv">hint</span><span class="o">=</span><span class="s2">"Hint for translator"</span>
-</code></pre>
+<h2 id='translate'>Translate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST <span class="s2">"https://nitro.alconost.com/api/v1/translate"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="nv">source_language</span><span class="o">=</span><span class="s2">"en"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="nv">target_languages</span><span class="o">=[</span><span class="s2">"ru"</span>, <span class="s2">"it"</span><span class="o">]</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="nv">text</span><span class="o">=</span><span class="s2">"Text to translate"</span> <span class="se">\</span>
+  <span class="nt">-d</span> <span class="nv">hint</span><span class="o">=</span><span class="s2">"Hint for translator"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"orders"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"it"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="w">
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"it"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.05</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="w">
     </span><span class="p">}</span><span class="w">
   </span><span class="p">],</span><span class="w">
-  </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text to translate"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hint for translator"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+  </span><span class="nl">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Text to translate"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Hint for translator"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint sends the text for translation and creates a list of orders.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
 <p><code>POST https://nitro.alconost.com/api/v1/translate</code></p>
@@ -452,9 +452,9 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <td>Translation quality (at this moment EXCELLENT quality supported only)</td>
 </tr>
 </tbody></table>
-<h2 id='delete-an-order'>Delete an Order</h2><pre class="highlight shell tab-shell"><code>curl -X DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
-</code></pre>
+<h2 id='delete-an-order'>Delete an Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns 204 No Content:</p>
 </blockquote>
@@ -480,18 +480,18 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <aside class="notice">
 You can delete orders with QUEUE status only.
 </aside>
-<h1 id='rates'>Rates</h1><h2 id='get-rates'>Get Rates</h2><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/rates"</span> <span class="se">\</span>
-  -H <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ=}"</span>
-</code></pre>
+<h1 id='rates'>Rates</h1><h2 id='get-rates'>Get Rates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/rates"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ=}"</span>
+</code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="s2">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="s2">"targetLanguage"</span><span class="p">:</span><span class="s2">"ms"</span><span class="p">,</span><span class="w"> </span><span class="s2">"rate"</span><span class="p">:</span><span class="mf">15.4</span><span class="p">,</span><span class="w"> </span><span class="s2">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="s2">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="s2">"targetLanguage"</span><span class="p">:</span><span class="s2">"tl"</span><span class="p">,</span><span class="w"> </span><span class="s2">"rate"</span><span class="p">:</span><span class="mf">15.4</span><span class="p">,</span><span class="w"> </span><span class="s2">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="s2">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="s2">"targetLanguage"</span><span class="p">:</span><span class="s2">"is"</span><span class="p">,</span><span class="w"> </span><span class="s2">"rate"</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span><span class="w"> </span><span class="s2">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">}</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nl">"targetLanguage"</span><span class="p">:</span><span class="s2">"ms"</span><span class="p">,</span><span class="w"> </span><span class="nl">"rate"</span><span class="p">:</span><span class="mf">15.4</span><span class="p">,</span><span class="w"> </span><span class="nl">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nl">"targetLanguage"</span><span class="p">:</span><span class="s2">"tl"</span><span class="p">,</span><span class="w"> </span><span class="nl">"rate"</span><span class="p">:</span><span class="mf">15.4</span><span class="p">,</span><span class="w"> </span><span class="nl">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nl">"targetLanguage"</span><span class="p">:</span><span class="s2">"is"</span><span class="p">,</span><span class="w"> </span><span class="nl">"rate"</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span><span class="w"> </span><span class="nl">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>This endpoint retrieves all rates.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://nitro.alconost.com/api/v1/rates</code></p>
@@ -545,13 +545,13 @@ You can delete orders with QUEUE status only.
 <blockquote>
 <p>In case of 400 (Bad Request) response code, there is an error object returned in the response body. The error object contains the error code, error description and, optionally, additional parameters related to the error. E.g:</p>
 </blockquote>
-<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"HUMAN_READABLE_ERROR_CODE"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Human readable description of the error"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"param1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error specific additional parameter 1"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"param2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error specific additional parameter 2"</span><span class="w">
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"code"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"HUMAN_READABLE_ERROR_CODE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Human readable description of the error"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"param1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error specific additional parameter 1"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"param2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Error specific additional parameter 2"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre>
+</span></code></pre></div>
 <p>The 400 error codes are:</p>
 
 <table><thead>
