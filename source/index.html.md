@@ -25,6 +25,7 @@ Welcome to the Alconost Nitro API! You can use our API to access Nitro API endpo
 # With shell, you can just pass the correct header with each request
 curl "api_endpoint_here" \
   -H "Authorization: Basic <base64("email:password")>"
+  -H "Content-Type: application/json"
 ```
 
 Nitro expects credentials to be included in all API requests to the server in authentication header that looks like the following:
@@ -38,6 +39,7 @@ Nitro expects credentials to be included in all API requests to the server in au
 ```shell
 curl "https://nitro.alconost.com/api/v1/user" \
   -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ="
+  -H "Content-Type: application/json"
 ```
 
 > The above command returns JSON structured like this:
@@ -67,6 +69,7 @@ This endpoint retrieves a user.
 ```shell
 curl "https://nitro.alconost.com/api/v1/orders" \
   -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ="
+  -H "Content-Type: application/json"
 ```
 
 > The above command returns JSON structured like this:
@@ -113,8 +116,9 @@ per_page | Orders count (default: 20)
 ## Get a Specific Order
 
 ```shell
-curl "https://nitro.alconost.com/api/v1/orders/6" \
-  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ="
+curl -X GET https://nitro.alconost.com/api/v1/orders 
+  -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="
+  -H "Content-Type: application/json"
 ```
 
 > The above command returns JSON structured like this:
@@ -152,12 +156,14 @@ ID | The ID of the order to retrieve
 ## Translate
 
 ```shell
-curl -X POST "https://nitro.alconost.com/api/v1/translate" \
-  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=" \
-  -d source_language="en" \
-  -d target_languages=["ru", "it"] \
-  -d text="Text to translate" \
-  -d hint="Hint for translator"
+curl -X POST "https://nitro.alconost.com/api/v1/translate" 
+  -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="
+  -H "Content-Type:application/json"
+  d '{
+      "source_language": "en",
+      "target_languages": ["ru", "it"],
+      "text": "Text to translate"
+      }'
 ```
 > The above command returns JSON structured like this:
 
@@ -205,6 +211,7 @@ quality | enum | Translation quality (at this moment EXCELLENT quality supported
 ```shell
 curl -X DELETE "https://nitro.alconost.com/api/v1/orders/6" \
   -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ="
+  -H "Content-Type: application/json"
 ```
 
 > The above command returns 204 No Content:
@@ -233,6 +240,7 @@ You can delete orders with QUEUE status only.
 ```shell
 curl "https://nitro.alconost.com/api/v1/rates" \
   -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=}"
+  -H "Content-Type: application/json"
 ```
 
 > The above command returns JSON structured like this:
