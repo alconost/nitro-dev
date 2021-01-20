@@ -83,9 +83,7 @@ curl "https://nitro.alconost.com/api/v1/orders" \
     "snippet": "Test",
     "source_language": "en",
     "target_language": "ru",
-    "created_at": "2016-01-29T05:52:17.840197Z",
-    "accepted_at": "0001-01-01T00:00:00Z",
-    "completed_at": "0001-01-01T00:00:00Z"
+    "created_at": "2016-01-29T05:52:17.840197Z"
   },
   {
     "id": 7,
@@ -136,9 +134,7 @@ curl "https://nitro.alconost.com/api/v1/orders/6" \
   "target_language": "ru",
   "volume": 4,
   "price": 0.04,
-  "created_at": "2016-01-29T05:52:17.840197Z",
-  "accepted_at": "0001-01-01T00:00:00Z",
-  "completed_at": "0001-01-01T00:00:00Z"
+  "created_at": "2016-01-29T05:52:17.840197Z"
 }
 ```
 
