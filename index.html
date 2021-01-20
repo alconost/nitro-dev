@@ -454,8 +454,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
   </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.04</span><span class="p">,</span><span class="w">
   </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-01-29T05:52:17.840197Z"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"accepted_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"quality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EXCELLENT"</span><span class="w">
+  </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves a specific order.</p>
@@ -538,11 +537,6 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 <td>string</td>
 <td>Hint for translator</td>
 </tr>
-<tr>
-<td>quality</td>
-<td>enum</td>
-<td>Translation quality (at this moment EXCELLENT quality supported only)</td>
-</tr>
 </tbody></table>
 <h2 id='delete-an-order'>Delete an Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
@@ -583,9 +577,9 @@ You can delete orders with QUEUE status only.
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
-  </span><span class="p">{</span><span class="nl">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nl">"targetLanguage"</span><span class="p">:</span><span class="s2">"ms"</span><span class="p">,</span><span class="w"> </span><span class="nl">"rate"</span><span class="p">:</span><span class="mf">15.4</span><span class="p">,</span><span class="w"> </span><span class="nl">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="nl">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nl">"targetLanguage"</span><span class="p">:</span><span class="s2">"tl"</span><span class="p">,</span><span class="w"> </span><span class="nl">"rate"</span><span class="p">:</span><span class="mf">15.4</span><span class="p">,</span><span class="w"> </span><span class="nl">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">},</span><span class="w">
-  </span><span class="p">{</span><span class="nl">"sourceLanguage"</span><span class="p">:</span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nl">"targetLanguage"</span><span class="p">:</span><span class="s2">"is"</span><span class="p">,</span><span class="w"> </span><span class="nl">"rate"</span><span class="p">:</span><span class="mf">20.0</span><span class="p">,</span><span class="w"> </span><span class="nl">"quality"</span><span class="p">:</span><span class="s2">"EXCELLENT"</span><span class="p">}</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nl">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ms"</span><span class="p">,</span><span class="w"> </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.4</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nl">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tl"</span><span class="p">,</span><span class="w"> </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.4</span><span class="w"> </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="nl">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nl">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"is"</span><span class="p">,</span><span class="w"> </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint retrieves all rates.</p>
