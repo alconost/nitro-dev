@@ -5,8 +5,8 @@ The Nitro API uses the following error codes:
 
 Error Code | Meaning
 ---------- | -------
-400 | Bad Request -- Something went wrong, see the response body for details (error code, description)
-401 | Unauthorized -- Your API key is wrong
+400 | Bad Request -- Something went wrong, please see the response body for details (error code, description)
+401 | Unauthorized -- Invalid API key
 403 | Forbidden -- The resource requested is hidden for administrators only
 404 | Not Found -- The specified resource could not be found
 405 | Method Not Allowed -- You tried to access a resource with an invalid method
