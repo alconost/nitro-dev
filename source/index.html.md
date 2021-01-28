@@ -115,7 +115,7 @@ per_page | Orders count (default: 20)
 ## Get a Specific Order
 
 ```shell
-curl "https://nitro.alconost.com/api/v1/orders/6" \
+curl "https://nitro.alconost.com/api/v1/orders/7" \
   -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ=" \
   -H "Content-Type: application/json" 
 
@@ -125,16 +125,19 @@ curl "https://nitro.alconost.com/api/v1/orders/6" \
 
 ```json
 {
-  "id": 6,
+  "id": 7,
   "source_text": "Test",
-  "status": "QUEUE",
+  "target_text": "Test",
+  "status": "DONE",
   "hint": "",
   "snippet": "Test",
   "source_language": "en",
-  "target_language": "ru",
+  "target_language": "it",
   "volume": 4,
-  "price": 0.04,
-  "created_at": "2016-01-29T05:52:17.840197Z"
+  "price": 0.05,
+  "created_at": "2016-01-29T05:52:17.840197Z",
+  "accepted_at": "2016-01-30T012:45:01.223137Z",
+  "completed_at": "2016-01-30T13:00:47.312484Z"
 }
 ```
 
