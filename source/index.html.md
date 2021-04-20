@@ -19,27 +19,22 @@ Welcome to the Alconost Nitro API! You can use our API to access Nitro API endpo
 
 # Authentication
 
-> To authorize, use this code:
-
 ```shell
-# With shell, you can just pass the correct header with each request
 curl "api_endpoint_here" \
-  -H "Authorization: Basic <base64("email:password")>" \
-  -H "Content-Type: application/json" 
+  -H "Content-Type: application/json" \
+  -u apikey: 
 ```
 
-Nitro expects credentials to be included in all API requests to the server in authentication header that looks like the following:
+HTTP Basic authentication. The API key acts as the username. API keys are per-account and can be generated and deleted in the Settings page.
 
-`Authorization: Basic <base64("email:password")>`
+# Account
 
-# User
-
-## Get User
+## Get Account
 
 ```shell
-curl "https://nitro.alconost.com/api/v1/user" \
-  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=" \
-  -H "Content-Type: application/json" 
+curl "https://nitro.alconost.com/api/v1/account" \
+  -H "Content-Type: application/json" \
+  -u apikey:
 ```
 
 > The above command returns JSON structured like this:
@@ -47,19 +42,17 @@ curl "https://nitro.alconost.com/api/v1/user" \
 ```json
 {
   "id" : 123,
-  "email": "test@alconost.com",
-  "full_name": "Nitro",
   "balance_overdraft_allowed": false,
   "reserved": 0.24,
   "balance": 174.46
 }
 ```
 
-This endpoint retrieves a user.
+This endpoint retrieves an account.
 
 ### HTTP Request
 
-`GET https://nitro.alconost.com/api/v1/user`
+`GET https://nitro.alconost.com/api/v1/account`
 
 
 # Orders
@@ -68,9 +61,8 @@ This endpoint retrieves a user.
 
 ```shell
 curl "https://nitro.alconost.com/api/v1/orders" \
-  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=" \
-  -H "Content-Type: application/json" 
-
+  -H "Content-Type: application/json" \
+  -u apikey:
 ```
 
 > The above command returns JSON structured like this:
@@ -98,7 +90,7 @@ curl "https://nitro.alconost.com/api/v1/orders" \
 ]
 ```
 
-This endpoint retrieves all user orders.
+This endpoint retrieves all account orders.
 
 ### HTTP Request
 
@@ -116,9 +108,8 @@ per_page | Orders count (default: 20)
 
 ```shell
 curl "https://nitro.alconost.com/api/v1/orders/7" \
-  -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ=" \
-  -H "Content-Type: application/json" 
-
+  -H "Content-Type: application/json" \
+  -u apikey:
 ```
 
 > The above command returns JSON structured like this:
@@ -157,8 +148,8 @@ ID | The ID of the order to retrieve
 
 ```shell
 curl "https://nitro.alconost.com/api/v1/translate" \
-  -H "Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ=" \
-  -H "Content-Type:application/json" \
+  -H "Content-Type: application/json" \
+  -u apikey: \
   -d '{
       "source_language": "en",
       "target_languages": ["ru", "it"],
@@ -209,9 +200,8 @@ hint | string | Hint for translator
 
 ```shell
 curl -X DELETE "https://nitro.alconost.com/api/v1/orders/6" \
-  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=" \
-  -H "Content-Type: application/json" 
-
+  -H "Content-Type: application/json" \
+  -u apikey:
 ```
 
 > The above command returns 204 No Content:
@@ -239,9 +229,8 @@ You can delete orders with QUEUE status only.
 
 ```shell
 curl "https://nitro.alconost.com/api/v1/rates" \
-  -H "Authorization: Basic ZW1haWw6cGFzc3dvcmQ=}" \
-  -H "Content-Type: application/json" 
-
+  -H "Content-Type: application/json" \
+  -u apikey:
 ```
 
 > The above command returns JSON structured like this:
