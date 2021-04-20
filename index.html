@@ -308,10 +308,10 @@
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
-            <a href="#user" class="toc-h1 toc-link" data-title="User">User</a>
+            <a href="#account" class="toc-h1 toc-link" data-title="Account">Account</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-user" class="toc-h2 toc-link" data-title="Get User">Get User</a>
+                    <a href="#get-account" class="toc-h2 toc-link" data-title="Get Account">Get Account</a>
                   </li>
               </ul>
           </li>
@@ -353,41 +353,31 @@
       <div class="content">
         <h1 id='introduction'>Introduction</h1>
 <p>Welcome to the Alconost Nitro API! You can use our API to access Nitro API endpoints.</p>
-<h1 id='authentication'>Authentication</h1>
-<blockquote>
-<p>To authorize, use this code:</p>
-</blockquote>
-<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
-curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic &lt;base64("</span>email:password<span class="s2">")&gt;"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
+<h1 id='authentication'>Authentication</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-u</span> apikey: 
 </code></pre></div>
-<p>Nitro expects credentials to be included in all API requests to the server in authentication header that looks like the following:</p>
-
-<p><code>Authorization: Basic &lt;base64(&quot;email:password&quot;)&gt;</code></p>
-<h1 id='user'>User</h1><h2 id='get-user'>Get User</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/user"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
+<p>HTTP Basic authentication. The API key acts as the username. API keys are per-account and can be generated and deleted in the Settings page.</p>
+<h1 id='account'>Account</h1><h2 id='get-account'>Get Account</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/account"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-u</span> apikey:
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"id"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@alconost.com"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nitro"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"balance_overdraft_allowed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="nl">"reserved"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.24</span><span class="p">,</span><span class="w">
   </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">174.46</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a user.</p>
+<p>This endpoint retrieves an account.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://nitro.alconost.com/api/v1/user</code></p>
+<p><code>GET https://nitro.alconost.com/api/v1/account</code></p>
 <h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get All Orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
-
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-u</span> apikey:
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -413,7 +403,7 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all user orders.</p>
+<p>This endpoint retrieves all account orders.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://nitro.alconost.com/api/v1/orders</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
@@ -436,9 +426,8 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 </tr>
 </tbody></table>
 <h2 id='get-a-specific-order'>Get a Specific Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders/7"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
-
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-u</span> apikey:
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -475,8 +464,8 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 </tr>
 </tbody></table>
 <h2 id='translate'>Translate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/translate"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic c3Jpbml2YXNtMjAxMEBnbWFpbC5jb206dGVzdEBrcHQ="</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Content-Type:application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-u</span> apikey: <span class="se">\</span>
   <span class="nt">-d</span> <span class="s1">'{
       "source_language": "en",
       "target_languages": ["ru", "it"],
@@ -541,9 +530,8 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 </tr>
 </tbody></table>
 <h2 id='delete-an-order'>Delete an Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ="</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
-
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-u</span> apikey:
 </code></pre></div>
 <blockquote>
 <p>The above command returns 204 No Content:</p>
@@ -571,9 +559,8 @@ curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
 You can delete orders with QUEUE status only.
 </aside>
 <h1 id='rates'>Rates</h1><h2 id='get-rates'>Get Rates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/rates"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Authorization: Basic ZW1haWw6cGFzc3dvcmQ=}"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> 
-
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-u</span> apikey:
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
