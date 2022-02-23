@@ -153,8 +153,20 @@ curl "https://nitro.alconost.com/api/v1/translate" \
   -d '{
       "source_language": "en",
       "target_languages": ["ru", "it"],
-      "text": "Text to translate"
-      }'
+      "text": "Text to translate",
+      "context" : {
+        "comment": {
+          "text": "Translation instructions",
+          "attachments": [
+            { "type": "image/png", "data" : "base64 encoded image" },
+            { "type": "image/gif", "data" : "base64 encoded image" }
+          ]
+        },
+        "tone": "GUESS",
+        "limit": 25
+      }
+    }'
+
 ```
 > The above command returns JSON structured like this:
 
@@ -177,7 +189,6 @@ curl "https://nitro.alconost.com/api/v1/translate" \
     }
   ],
   "text": "Text to translate",
-  "hint": "Hint for translator",
   "volume": 4
 }
 ```
@@ -189,12 +200,25 @@ This endpoint sends the text for translation and creates a list of orders.
 
 ### Attributes
 
-Parameter | Type | Description
---------- | ---- | -----------
-source_language | string | Source language
-target_languages | array | Collection of target languages
-text | string | Text to be translated
-hint | string | Hint for translator
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+source_language | Yes | string | Source language
+target_languages | Yes | array | Collection of target languages
+text | Yes | string | Text to be translated
+hint | | string | Hint for translator
+context | | object | Context for translator. Includes comment, tone, limit
+context.comment | | object | Comment for translator. Includes text, attachments
+context.comment.text | | string | Text of comment
+context.comment.attachments | | array | Array of image objects
+context.tone | | enum | Choose the tone of translation: FORMAL, INFORMAL. Or let our translators choose the tone themselves by specifying GUESS
+context.limit | | integer | Limit of the allowed number of characters
+
+### Attachments
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+type | Yes | string | Image mime type (like image/png). Supported image types are png, svg, jpeg and gif
+data | Yes | string | Base64 encoded image
 
 ## Delete an Order
 
