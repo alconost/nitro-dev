@@ -253,7 +253,7 @@ You can delete orders with QUEUE status only.
 
 ```shell
 curl "https://nitro.alconost.com/api/v1/rates" \
-  -H "Content-Type: application/json" \
+  -H "Content-Type: application/json"
 ```
 
 > The above command returns JSON structured like this:
