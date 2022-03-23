@@ -217,7 +217,7 @@ context.limit | | integer | Limit of the allowed number of characters
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-type | Yes | string | Image mime type (like image/png). Supported image types are png, svg, jpeg and gif
+type | Yes | string | Image mime type (like image/png). Supported image types are png, jpeg and gif
 data | Yes | string | Base64 encoded image
 
 ## Delete an Order
@@ -254,7 +254,6 @@ You can delete orders with QUEUE status only.
 ```shell
 curl "https://nitro.alconost.com/api/v1/rates" \
   -H "Content-Type: application/json" \
-  -u apikey:
 ```
 
 > The above command returns JSON structured like this:
