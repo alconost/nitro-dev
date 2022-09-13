@@ -557,6 +557,20 @@ html, body {
     }
   }
 }
+.sign-in-btn{
+  padding: 0 13px;
+}
+.sign-in-btn__link{
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  color: #FFFFFF;
+  display: block;
+  background: #FF9800;
+  border-radius: 3px;
+  padding: 6px 0 7px;
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 // RESPONSIVE DESIGN
