@@ -455,7 +455,6 @@
   </span><span class="nl">"source_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"target_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DONE"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"hint"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
   </span><span class="nl">"snippet"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"it"</span><span class="p">,</span><span class="w">
@@ -497,7 +496,8 @@
           ]
         },
         "tone": "GUESS",
-        "limit": 25
+        "limit": 25,
+        "category": "GAMES"
       }
     }'</span>
 
@@ -557,12 +557,6 @@
 <td>Text to be translated</td>
 </tr>
 <tr>
-<td>hint</td>
-<td></td>
-<td>string</td>
-<td>Hint for translator</td>
-</tr>
-<tr>
 <td>context</td>
 <td></td>
 <td>object</td>
@@ -597,6 +591,12 @@
 <td></td>
 <td>integer</td>
 <td>Limit of the allowed number of characters</td>
+</tr>
+<tr>
+<td>context.category</td>
+<td></td>
+<td>enum</td>
+<td>Choose the category of translation: APPS, CRYPTO, CASINO, LEGAL, E_COMMERCE, FINANCE, GAMES, GENERAL, MEDIA, MEDICAL, SCIENCE, IT, TRAVEL</td>
 </tr>
 </tbody></table>
 <h3 id='attachments'>Attachments</h3>
