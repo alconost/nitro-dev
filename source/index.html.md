@@ -120,7 +120,6 @@ curl "https://nitro.alconost.com/api/v1/orders/7" \
   "source_text": "Test",
   "target_text": "Test",
   "status": "DONE",
-  "hint": "",
   "snippet": "Test",
   "source_language": "en",
   "target_language": "it",
@@ -163,7 +162,8 @@ curl "https://nitro.alconost.com/api/v1/translate" \
           ]
         },
         "tone": "GUESS",
-        "limit": 25
+        "limit": 25,
+        "category": "GAMES"
       }
     }'
 
@@ -205,13 +205,13 @@ Parameter | Required | Type | Description
 source_language | Yes | string | Source language
 target_languages | Yes | array | Collection of target languages
 text | Yes | string | Text to be translated
-hint | | string | Hint for translator
 context | | object | Context for translator. Includes comment, tone, limit
 context.comment | | object | Comment for translator. Includes text, attachments
 context.comment.text | | string | Text of comment
 context.comment.attachments | | array | Array of image objects
 context.tone | | enum | Choose the tone of translation: FORMAL, INFORMAL. Or let our translators choose the tone themselves by specifying GUESS
 context.limit | | integer | Limit of the allowed number of characters
+context.category | | enum | Choose the category of translation: APPS, CRYPTO, CASINO, LEGAL, E_COMMERCE, FINANCE, GAMES, GENERAL, MEDIA, MEDICAL, SCIENCE, IT, TRAVEL
 
 ### Attachments
 
