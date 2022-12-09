@@ -158,7 +158,7 @@ curl "https://nitro.alconost.com/api/v1/translate" \
           "text": "Translation instructions",
           "attachments": [
             { "type": "image/png", "data" : "base64 encoded image" },
-            { "type": "image/gif", "data" : "base64 encoded image" }
+            { "type": "image/svg+xml", "data" : "base64 encoded image" }
           ]
         },
         "tone": "GUESS",
@@ -217,7 +217,7 @@ context.category | | enum | Choose the category of translation: APPS, CRYPTO, CA
 
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
-type | Yes | string | Image mime type (like image/png). Supported image types are png, jpeg and gif
+type | Yes | string | Image mime type (like image/png). Supported image types are png, jpeg, svg and gif
 data | Yes | string | Base64 encoded image
 
 ## Delete an Order
