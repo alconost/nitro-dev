@@ -26,7 +26,7 @@ curl "api_endpoint_here" \
 ```
 
 HTTP Basic authentication. The API key acts as the username. API keys are per-account and can be generated and deleted in the Settings page.
-Requests should contain a header field in the form of Authorization: Basic <credentials>, where credentials is the Base64 encoding of the API key and a blank password joined by a single colon :.
+Requests should contain a header field in the form of Authorization: Basic <credentials>, where credentials is the Base64 encoded API key and a blank password joined by a single colon :.
 
 # Account
 
