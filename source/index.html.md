@@ -200,7 +200,7 @@ curl "https://nitro.alconost.com/api/v1/translate" \
   "volume": 4
 }
 ```
-This endpoint sends the text for translation and retrieves the information about created order(s) by this request.
+This endpoint sends the text for translation and creates a list of orders.
 
 ### HTTP Request
 
