@@ -25,8 +25,15 @@ curl "api_endpoint_here" \
   -u apikey: 
 ```
 
-HTTP Basic authentication. The API key acts as the username. API keys are per-account and can be generated and deleted in the Settings page.
+```shell
+curl "api_endpoint_here" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: generate_auth_header_here" 
+```
+
+HTTP Basic authentication. The API key acts as the username. API keys are per-account and can be generated and deleted in the <a href="https://nitro.alconost.com/customer/settings">Settings page</a>.
 Requests should contain a header field in the form of `Authorization: Basic $credentials`, where credentials is the Base64 encoded API key and a blank password joined by a single colon `:`.
+You can just copy the Authorization header value when you generate the API key.
 
 # Account
 
