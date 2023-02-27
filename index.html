@@ -374,9 +374,13 @@
 <h1 id='authentication'>Authentication</h1><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">-u</span> apikey: 
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"api_endpoint_here"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: generate_auth_header_here"</span> 
 </code></pre></div>
-<p>HTTP Basic authentication. The API key acts as the username. API keys are per-account and can be generated and deleted in the Settings page.
-Requests should contain a header field in the form of <code>Authorization: Basic $credentials</code>, where credentials is the Base64 encoded API key and a blank password joined by a single colon <code>:</code>.</p>
+<p>HTTP Basic authentication. The API key acts as the username. API keys are per-account and can be generated and deleted in the <a href="https://nitro.alconost.com/customer/settings">Settings page</a>.
+Requests should contain a header field in the form of <code>Authorization: Basic $credentials</code>, where credentials is the Base64 encoded API key and a blank password joined by a single colon <code>:</code>.
+You can just copy the Authorization header value when you generate the API key.</p>
 <h1 id='account'>Account</h1><h2 id='get-account'>Get Account</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/account"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">-u</span> apikey:
