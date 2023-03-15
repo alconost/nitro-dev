@@ -161,6 +161,7 @@ curl "https://nitro.alconost.com/api/v1/translate" \
       "source_language": "en",
       "target_languages": ["ru", "it"],
       "text": "Text to translate",
+      "resource": { "type": "text/html", "data": "html data"},
       "context" : {
         "comment": {
           "text": "Translation instructions",
@@ -213,20 +214,20 @@ Parameter | Required | Type | Description
 source_language | Yes | string | Source language
 target_languages | Yes | array | Collection of target languages
 text | Yes | string | Text to be translated
+resource | Yes | object | Resource to be translated
+resource.type | Yes | string | Resource MIME type (at the moment `text/html` only supported)
+resource.data | Yes | string | Resource data
 context | | object | Context for translator. Includes comment, tone, limit
 context.comment | | object | Comment for translator. Includes text, attachments
 context.comment.text | | string | Text of comment
 context.comment.attachments | | array | Array of image objects
+context.comment.attachments.type | Yes | string | Image mime type (like image/png). Supported image types are png, jpeg, svg and gif
+context.comment.attachments.data | Yes | string | Base64 encoded image
 context.tone | | enum | Choose the tone of translation: FORMAL, INFORMAL. Or let our translators choose the tone themselves by specifying GUESS
 context.limit | | integer | Limit of the allowed number of characters
 context.category | | enum | Choose the category of translation: APPS, CRYPTO, CASINO, LEGAL, E_COMMERCE, FINANCE, GAMES, GENERAL, MEDIA, MEDICAL, SCIENCE, IT, TRAVEL
 
-### Attachments
-
-Parameter | Required | Type | Description
---------- | -------- | ---- | -----------
-type | Yes | string | Image mime type (like image/png). Supported image types are png, jpeg, svg and gif
-data | Yes | string | Base64 encoded image
+Please note that when placing an order, you can specify only one of the parameters: "text" or "resource".
 
 ## Delete an Order
 
