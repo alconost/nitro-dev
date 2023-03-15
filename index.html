@@ -492,6 +492,7 @@ You can just copy the Authorization header value when you generate the API key.<
       "source_language": "en",
       "target_languages": ["ru", "it"],
       "text": "Text to translate",
+      "resource": { "type": "text/html", "data": "html data"},
       "context" : {
         "comment": {
           "text": "Translation instructions",
@@ -562,6 +563,24 @@ You can just copy the Authorization header value when you generate the API key.<
 <td>Text to be translated</td>
 </tr>
 <tr>
+<td>resource</td>
+<td>Yes</td>
+<td>object</td>
+<td>Resource to be translated</td>
+</tr>
+<tr>
+<td>resource.type</td>
+<td>Yes</td>
+<td>string</td>
+<td>Resource MIME type (at the moment <code>text/html</code> only supported)</td>
+</tr>
+<tr>
+<td>resource.data</td>
+<td>Yes</td>
+<td>string</td>
+<td>Resource data</td>
+</tr>
+<tr>
 <td>context</td>
 <td></td>
 <td>object</td>
@@ -586,6 +605,18 @@ You can just copy the Authorization header value when you generate the API key.<
 <td>Array of image objects</td>
 </tr>
 <tr>
+<td>context.comment.attachments.type</td>
+<td>Yes</td>
+<td>string</td>
+<td>Image mime type (like image/png). Supported image types are png, jpeg, svg and gif</td>
+</tr>
+<tr>
+<td>context.comment.attachments.data</td>
+<td>Yes</td>
+<td>string</td>
+<td>Base64 encoded image</td>
+</tr>
+<tr>
 <td>context.tone</td>
 <td></td>
 <td>enum</td>
@@ -604,28 +635,8 @@ You can just copy the Authorization header value when you generate the API key.<
 <td>Choose the category of translation: APPS, CRYPTO, CASINO, LEGAL, E_COMMERCE, FINANCE, GAMES, GENERAL, MEDIA, MEDICAL, SCIENCE, IT, TRAVEL</td>
 </tr>
 </tbody></table>
-<h3 id='attachments'>Attachments</h3>
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Required</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>type</td>
-<td>Yes</td>
-<td>string</td>
-<td>Image mime type (like image/png). Supported image types are png, jpeg, svg and gif</td>
-</tr>
-<tr>
-<td>data</td>
-<td>Yes</td>
-<td>string</td>
-<td>Base64 encoded image</td>
-</tr>
-</tbody></table>
+
+<p>Please note that when placing an order, you can specify only one of the parameters: &quot;text&quot; or &quot;resource&quot;.</p>
 <h2 id='delete-an-order'>Delete an Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">-u</span> apikey:
