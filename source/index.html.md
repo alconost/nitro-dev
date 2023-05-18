@@ -215,7 +215,7 @@ source_language | Yes | string | Source language
 target_languages | Yes | array | Collection of target languages
 text | Yes | string | Text to be translated
 resource | Yes | object | Resource to be translated
-resource.type | Yes | string | Resource MIME type (at the moment `text/html`, `application/strings`, `application/json` only supported)
+resource.type | Yes | string | Resource MIME type (at the moment `text/html`, `text/x-objcstrings`, `application/json` only supported)
 resource.data | Yes | string | Resource data
 context | | object | Context for translator. Includes comment, tone, limit
 context.comment | | object | Comment for translator. Includes text, attachments
