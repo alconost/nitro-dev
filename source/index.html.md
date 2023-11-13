@@ -124,18 +124,39 @@ curl "https://nitro.alconost.com/api/v1/orders/7" \
 
 ```json
 {
-  "id": 7,
-  "source_text": "Test",
-  "target_text": "Test",
-  "status": "DONE",
-  "snippet": "Test",
-  "source_language": "en",
-  "target_language": "it",
-  "volume": 4,
-  "price": 0.05,
-  "created_at": "2016-01-29T05:52:17.840197Z",
-  "accepted_at": "2016-01-30T012:45:01.223137Z",
-  "completed_at": "2016-01-30T13:00:47.312484Z"
+    "id": 7,
+    "source_text": "Test",
+    "target_text": "Test",
+    "status": "DONE",
+    "source_language": "en",
+    "target_language": "it",
+    "volume": 4,
+    "price": 0.05,
+    "context": {
+        "tone": "GUESS",
+        "category": "GENERAL",
+        "limit": 5
+    },
+    "comments": [
+        {
+            "id": 8,
+            "time": "2023-02-16T10:47:59.000Z",
+            "role": "CUSTOMER",
+            "text": "Translation instructions",
+            "attachments": [
+                {
+                    "image": "base64 encoded image",
+                    "type": "image/png",
+                    "name": "IMAGE 1",
+                    "weight": 46,
+                    "size": "481x315"
+                }
+            ]
+        }
+    ],
+    "created_at": "2023-02-16T10:47:59.000Z",
+    "accepted_at": "2023-02-16T13:45:03.000Z",
+    "completed_at": "2023-02-16T13:45:10.000Z"
 }
 ```
 
@@ -158,47 +179,53 @@ curl "https://nitro.alconost.com/api/v1/translate" \
   -H "Content-Type: application/json" \
   -u apikey: \
   -d '{
-      "source_language": "en",
-      "target_languages": ["ru", "it"],
-      "text": "Text to translate",
-      "resource": { "type": "text/html", "data": "html data"},
-      "context" : {
-        "comment": {
-          "text": "Translation instructions",
-          "attachments": [
-            { "type": "image/png", "data" : "base64 encoded image" },
-            { "type": "image/svg+xml", "data" : "base64 encoded image" }
-          ]
-        },
-        "tone": "GUESS",
-        "limit": 25,
-        "category": "GAMES"
+  "source_language": "en",
+  "target_languages": ["en", "it"],
+  "text": "Text to translate",   
+  "resource": { "type": "text/html", "data": "html data"},
+  "context": {
+    "tone": "GUESS",
+    "limit": 25,
+    "category": "GAMES"
+  },
+  "comment": {
+    "text": "Translation instructions",
+    "attachments": [
+      {
+        "type": "image/png",
+        "data": "base64 encoded image"
+      },
+      {
+        "type": "image/svg+xml",
+        "data": "base64 encoded image"
       }
-    }'
+    ]
+  }
+}'
 
 ```
 > The above command returns JSON structured like this:
 
 ```json
 {
-  "orders": [
-    {
-      "id": 6,
-      "source_language": "en",
-      "target_language": "ru",
-      "price": 0.04,
-      "created_at": "2016-01-29T05:52:17.840197Z"
-    },
-    {
-      "id": 7,
-      "source_language": "en",
-      "target_language": "it",
-      "price": 0.05,
-      "created_at": "2016-01-29T05:52:17.840197Z"
-    }
-  ],
-  "text": "Text to translate",
-  "volume": 4
+    "text": "Text to translate",
+    "volume": 25,
+    "orders": [
+        {
+            "id": 6,
+            "source_language": "en",
+            "target_language": "en",
+            "price": 0.07,
+            "created_at": "2023-11-13T12:19:54.000Z"
+        },
+        {
+            "id": 7,
+            "source_language": "en",
+            "target_language": "it",
+            "price": 0.27,
+            "created_at": "2023-11-13T12:19:54.000Z"
+        }
+    ]
 }
 ```
 This endpoint sends the text for translation and creates a list of orders.
@@ -217,15 +244,16 @@ text | Yes | string | Text to be translated
 resource | Yes | object | Resource to be translated
 resource.type | Yes | string | Resource MIME type (at the moment `text/html`, `text/x-objcstrings`, `application/json` only supported)
 resource.data | Yes | string | Resource data
-context | | object | Context for translator. Includes comment, tone, limit
-context.comment | | object | Comment for translator. Includes text, attachments
-context.comment.text | | string | Text of comment
-context.comment.attachments | | array | Array of image objects
-context.comment.attachments.type | Yes | string | Image mime type (like image/png). Supported image types are png, jpeg, svg and gif
-context.comment.attachments.data | Yes | string | Base64 encoded image
+context | | object | Context for translator. Includes tone, limit, category
 context.tone | | enum | Choose the tone of translation: FORMAL, INFORMAL. Or let our translators choose the tone themselves by specifying GUESS
 context.limit | | integer | Limit of the allowed number of characters
 context.category | | enum | Choose the category of translation: APPS, CRYPTO, CASINO, LEGAL, E_COMMERCE, FINANCE, GAMES, GENERAL, MEDIA, MEDICAL, SCIENCE, IT, TRAVEL
+comment | | object | Comment for translator. Includes text, attachments
+comment.text | | string | Text of comment
+comment.attachments | | array | Array of image objects
+comment.attachments.type | Yes | string | Image mime type (like image/png). Supported image types are png, jpeg, svg and gif
+comment.attachments.data | Yes | string | Base64 encoded image
+
 
 Please note that when placing an order, you can specify only one of the parameters: "text" or "resource".
 
