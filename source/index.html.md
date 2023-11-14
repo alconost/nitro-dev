@@ -124,39 +124,39 @@ curl "https://nitro.alconost.com/api/v1/orders/7" \
 
 ```json
 {
-    "id": 7,
-    "source_text": "Test",
-    "target_text": "Test",
-    "status": "DONE",
-    "source_language": "en",
-    "target_language": "it",
-    "volume": 4,
-    "price": 0.05,
-    "context": {
-        "tone": "GUESS",
-        "category": "GENERAL",
-        "limit": 5
-    },
-    "comments": [
+  "id": 7,
+  "source_text": "Test",
+  "target_text": "Test",
+  "status": "DONE",
+  "source_language": "en",
+  "target_language": "it",
+  "volume": 4,
+  "price": 0.05,
+  "context": {
+    "tone": "GUESS",
+    "limit": 5,
+    "category": "GENERAL" 
+  },
+  "comments": [
+    {
+      "id": 8,
+      "time": "2023-02-16T10:47:59.000Z",
+      "role": "CUSTOMER",
+      "text": "Translation instructions",
+      "attachments": [
         {
-            "id": 8,
-            "time": "2023-02-16T10:47:59.000Z",
-            "role": "CUSTOMER",
-            "text": "Translation instructions",
-            "attachments": [
-                {
-                    "image": "base64 encoded image",
-                    "type": "image/png",
-                    "name": "IMAGE 1",
-                    "weight": 46,
-                    "size": "481x315"
-                }
-            ]
+          "image": "base64 encoded image",
+          "type": "image/png",
+          "name": "IMAGE 1",
+          "weight": 46,
+          "size": "481x315"
         }
-    ],
-    "created_at": "2023-02-16T10:47:59.000Z",
-    "accepted_at": "2023-02-16T13:45:03.000Z",
-    "completed_at": "2023-02-16T13:45:10.000Z"
+      ]
+    }
+  ],
+  "created_at": "2023-02-16T10:47:59.000Z",
+  "accepted_at": "2023-02-16T13:45:03.000Z",
+  "completed_at": "2023-02-16T13:45:10.000Z"
 }
 ```
 
@@ -180,9 +180,15 @@ curl "https://nitro.alconost.com/api/v1/translate" \
   -u apikey: \
   -d '{
   "source_language": "en",
-  "target_languages": ["en", "it"],
-  "text": "Text to translate",   
-  "resource": { "type": "text/html", "data": "html data"},
+  "target_languages": [
+    "en",
+    "it"
+  ],
+  "text": "Text to translate",
+  "resource": {
+    "type": "text/html",
+    "data": "html data"
+  },
   "context": {
     "tone": "GUESS",
     "limit": 25,
@@ -208,24 +214,24 @@ curl "https://nitro.alconost.com/api/v1/translate" \
 
 ```json
 {
-    "text": "Text to translate",
-    "volume": 25,
-    "orders": [
-        {
-            "id": 6,
-            "source_language": "en",
-            "target_language": "en",
-            "price": 0.07,
-            "created_at": "2023-11-13T12:19:54.000Z"
-        },
-        {
-            "id": 7,
-            "source_language": "en",
-            "target_language": "it",
-            "price": 0.27,
-            "created_at": "2023-11-13T12:19:54.000Z"
-        }
-    ]
+  "text": "Text to translate",
+  "volume": 25,
+  "orders": [
+    {
+      "id": 6,
+      "source_language": "en",
+      "target_language": "en",
+      "price": 0.07,
+      "created_at": "2023-11-13T12:19:54.000Z"
+    },
+    {
+      "id": 7,
+      "source_language": "en",
+      "target_language": "it",
+      "price": 0.27,
+      "created_at": "2023-11-13T12:19:54.000Z"
+    }
+  ]
 }
 ```
 This endpoint sends the text for translation and creates a list of orders.
