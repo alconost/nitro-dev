@@ -135,8 +135,7 @@ curl "https://nitro.alconost.com/api/v1/orders/7" \
   "context": {
     "tone": "GUESS",
     "limit": 5,
-    "category": "GENERAL"
-    
+    "category": "GENERAL" 
   },
   "comments": [
     {
