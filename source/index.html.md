@@ -260,6 +260,7 @@ comment.attachments | | array | Array of image objects
 comment.attachments.type | Yes | string | Image mime type (like image/png). Supported image types are png, jpeg, svg and gif
 comment.attachments.data | Yes | string | Base64 encoded image
 
+You can find language codes and corresponding language names [here](#supported-languages).
 
 Please note that when placing an order, you can specify only one of the parameters: "text" or "resource".
 
@@ -314,3 +315,74 @@ This endpoint retrieves all rates.
 ### HTTP Request
 
 `GET https://nitro.alconost.com/api/v1/rates`
+
+# Supported languages
+
+## Languages
+
+Here you can view language codes and corresponding language names. Please note that you must specify the **language code** when placing your order.
+
+Language code | Language
+------------- | --------
+ar | Arabic
+az | Azerbaijani
+be | Belarusian
+bg | Bulgarian
+bn | Bengali
+ca | Catalan
+cs | Czech
+da | Danish
+de | German
+el | Greek
+en | English
+es-ES | Spanish
+es-MX | Spanish (Mexico)
+et | Estonian
+fa | Persian
+fi | Finnish
+fr | French
+he | Hebrew
+hi | Hindi
+hr | Croatian
+hu | Hungarian
+id | Indonesian
+is | Icelandic
+it | Italian
+ja | Japanese
+kk | Kazakh
+ko | Korean
+lt | Lithuanian
+lv | Latvian
+ml-IN | Malayalam
+ms | Malay
+my | Burmese
+nl | Dutch
+no | Norwegian
+pl | Polish
+pt-BR | Portuguese (Brazil)
+pt-PT | Portuguese (Portugal)
+ro | Romanian
+ru | Russian
+sk | Slovak
+sl | Slovene
+sr | Serbian (Cyrillic)
+sr-CS | Serbian (Latin)
+sv-SE | Swedish
+ta | Tamil
+th | Thai
+tl | Tagalog (Philippines)
+tr | Turkish
+uk | Ukrainian
+ur-PK | Urdu (Pakistan)
+uz | Uzbek
+vi | Vietnamese
+zh-CN | Chinese (Simplified)
+zh-TW | Chinese (Traditional)
+af | Afrikaans
+fr-CA | French (Canada)
+hy-AM | Armenian
+ka | Georgian
+te | Telugu
+tg | Tajik
+ky | Kyrgyz
+
