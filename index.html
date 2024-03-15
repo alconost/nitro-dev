@@ -356,6 +356,14 @@
               </ul>
           </li>
           <li>
+            <a href="#supported-languages" class="toc-h1 toc-link" data-title="Supported languages">Supported languages</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#languages" class="toc-h2 toc-link" data-title="Languages">Languages</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
           </li>
       </ul>
@@ -669,6 +677,8 @@ You can just copy the Authorization header value when you generate the API key.<
 </tr>
 </tbody></table>
 
+<p>You can find language codes and corresponding language names <a href="#supported-languages">here</a>.</p>
+
 <p>Please note that when placing an order, you can specify only one of the parameters: &quot;text&quot; or &quot;resource&quot;.</p>
 <h2 id='delete-an-order'>Delete an Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
@@ -714,6 +724,260 @@ You can delete orders with QUEUE status only.
 <p>This endpoint retrieves all rates.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
 <p><code>GET https://nitro.alconost.com/api/v1/rates</code></p>
+<h1 id='supported-languages'>Supported languages</h1><h2 id='languages'>Languages</h2>
+<p>Here you can view language codes and corresponding language names. Please note that you must specify the <strong>language code</strong> when placing your order.</p>
+
+<table><thead>
+<tr>
+<th>Language code</th>
+<th>Language</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>ar</td>
+<td>Arabic</td>
+</tr>
+<tr>
+<td>az</td>
+<td>Azerbaijani</td>
+</tr>
+<tr>
+<td>be</td>
+<td>Belarusian</td>
+</tr>
+<tr>
+<td>bg</td>
+<td>Bulgarian</td>
+</tr>
+<tr>
+<td>bn</td>
+<td>Bengali</td>
+</tr>
+<tr>
+<td>ca</td>
+<td>Catalan</td>
+</tr>
+<tr>
+<td>cs</td>
+<td>Czech</td>
+</tr>
+<tr>
+<td>da</td>
+<td>Danish</td>
+</tr>
+<tr>
+<td>de</td>
+<td>German</td>
+</tr>
+<tr>
+<td>el</td>
+<td>Greek</td>
+</tr>
+<tr>
+<td>en</td>
+<td>English</td>
+</tr>
+<tr>
+<td>es-ES</td>
+<td>Spanish</td>
+</tr>
+<tr>
+<td>es-MX</td>
+<td>Spanish (Mexico)</td>
+</tr>
+<tr>
+<td>et</td>
+<td>Estonian</td>
+</tr>
+<tr>
+<td>fa</td>
+<td>Persian</td>
+</tr>
+<tr>
+<td>fi</td>
+<td>Finnish</td>
+</tr>
+<tr>
+<td>fr</td>
+<td>French</td>
+</tr>
+<tr>
+<td>he</td>
+<td>Hebrew</td>
+</tr>
+<tr>
+<td>hi</td>
+<td>Hindi</td>
+</tr>
+<tr>
+<td>hr</td>
+<td>Croatian</td>
+</tr>
+<tr>
+<td>hu</td>
+<td>Hungarian</td>
+</tr>
+<tr>
+<td>id</td>
+<td>Indonesian</td>
+</tr>
+<tr>
+<td>is</td>
+<td>Icelandic</td>
+</tr>
+<tr>
+<td>it</td>
+<td>Italian</td>
+</tr>
+<tr>
+<td>ja</td>
+<td>Japanese</td>
+</tr>
+<tr>
+<td>kk</td>
+<td>Kazakh</td>
+</tr>
+<tr>
+<td>ko</td>
+<td>Korean</td>
+</tr>
+<tr>
+<td>lt</td>
+<td>Lithuanian</td>
+</tr>
+<tr>
+<td>lv</td>
+<td>Latvian</td>
+</tr>
+<tr>
+<td>ml-IN</td>
+<td>Malayalam</td>
+</tr>
+<tr>
+<td>ms</td>
+<td>Malay</td>
+</tr>
+<tr>
+<td>my</td>
+<td>Burmese</td>
+</tr>
+<tr>
+<td>nl</td>
+<td>Dutch</td>
+</tr>
+<tr>
+<td>no</td>
+<td>Norwegian</td>
+</tr>
+<tr>
+<td>pl</td>
+<td>Polish</td>
+</tr>
+<tr>
+<td>pt-BR</td>
+<td>Portuguese (Brazil)</td>
+</tr>
+<tr>
+<td>pt-PT</td>
+<td>Portuguese (Portugal)</td>
+</tr>
+<tr>
+<td>ro</td>
+<td>Romanian</td>
+</tr>
+<tr>
+<td>ru</td>
+<td>Russian</td>
+</tr>
+<tr>
+<td>sk</td>
+<td>Slovak</td>
+</tr>
+<tr>
+<td>sl</td>
+<td>Slovene</td>
+</tr>
+<tr>
+<td>sr</td>
+<td>Serbian (Cyrillic)</td>
+</tr>
+<tr>
+<td>sr-CS</td>
+<td>Serbian (Latin)</td>
+</tr>
+<tr>
+<td>sv-SE</td>
+<td>Swedish</td>
+</tr>
+<tr>
+<td>ta</td>
+<td>Tamil</td>
+</tr>
+<tr>
+<td>th</td>
+<td>Thai</td>
+</tr>
+<tr>
+<td>tl</td>
+<td>Tagalog (Philippines)</td>
+</tr>
+<tr>
+<td>tr</td>
+<td>Turkish</td>
+</tr>
+<tr>
+<td>uk</td>
+<td>Ukrainian</td>
+</tr>
+<tr>
+<td>ur-PK</td>
+<td>Urdu (Pakistan)</td>
+</tr>
+<tr>
+<td>uz</td>
+<td>Uzbek</td>
+</tr>
+<tr>
+<td>vi</td>
+<td>Vietnamese</td>
+</tr>
+<tr>
+<td>zh-CN</td>
+<td>Chinese (Simplified)</td>
+</tr>
+<tr>
+<td>zh-TW</td>
+<td>Chinese (Traditional)</td>
+</tr>
+<tr>
+<td>af</td>
+<td>Afrikaans</td>
+</tr>
+<tr>
+<td>fr-CA</td>
+<td>French (Canada)</td>
+</tr>
+<tr>
+<td>hy-AM</td>
+<td>Armenian</td>
+</tr>
+<tr>
+<td>ka</td>
+<td>Georgian</td>
+</tr>
+<tr>
+<td>te</td>
+<td>Telugu</td>
+</tr>
+<tr>
+<td>tg</td>
+<td>Tajik</td>
+</tr>
+<tr>
+<td>ky</td>
+<td>Kyrgyz</td>
+</tr>
+</tbody></table>
 <h1 id='errors'>Errors</h1>
 <p>The Nitro API uses the following error codes:</p>
 
