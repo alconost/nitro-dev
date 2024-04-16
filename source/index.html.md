@@ -108,7 +108,7 @@ This endpoint retrieves all account orders.
 
 Parameter | Type | Description
 --------- | ---- | -----------
-sort |  | Data sorting type. Descending `desc` and ascending `asc` sorting supported.
+sort | string | Data sorting type. Descending `desc` and ascending `asc` sorting supported.
 page | integer | Page number (default: 0)
 per_page |  | Orders count (default: 20)
 
