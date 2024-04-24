@@ -108,8 +108,9 @@ This endpoint retrieves all account orders.
 
 Parameter | Type | Description
 --------- | ---- | -----------
+sort | string | Data sorting type. Descending `desc` and ascending `asc` sorting supported.
 page | integer | Page number (default: 0)
-per_page | Orders count (default: 20)
+per_page |  | Orders count (default: 20)
 
 
 ## Get a Specific Order
@@ -125,6 +126,11 @@ curl "https://nitro.alconost.com/api/v1/orders/7" \
 ```json
 {
   "id": 7,
+  "resource": {
+    "type": "text/html",
+    "metadata": "resource metadata",
+    "data": "html data"
+  },
   "source_text": "Test",
   "target_text": "Test",
   "status": "DONE",
@@ -184,9 +190,9 @@ curl "https://nitro.alconost.com/api/v1/translate" \
     "en",
     "it"
   ],
-  "text": "Text to translate",
   "resource": {
     "type": "text/html",
+    "metadata": "resource metadata",
     "data": "html data"
   },
   "context": {
@@ -215,6 +221,11 @@ curl "https://nitro.alconost.com/api/v1/translate" \
 ```json
 {
   "text": "Text to translate",
+  "resource": {
+    "type": "text/html",
+    "metadata": "resource metadata",
+    "data": "html data"
+  },
   "volume": 25,
   "orders": [
     {
@@ -246,9 +257,10 @@ Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 source_language | Yes | string | Source language
 target_languages | Yes | array | Collection of target languages
-text | Yes | string | Text to be translated
+text (deprecated) | Yes | string | Text to be translated
 resource | Yes | object | Resource to be translated
-resource.type | Yes | string | Resource MIME type (at the moment `text/html`, `text/x-objcstrings`, `application/json` only supported)
+resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json` only supported)
+metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
 resource.data | Yes | string | Resource data
 context | | object | Context for translator. Includes tone, limit, category
 context.tone | | enum | Choose the tone of translation: FORMAL, INFORMAL. Or let our translators choose the tone themselves by specifying GUESS
@@ -262,7 +274,7 @@ comment.attachments.data | Yes | string | Base64 encoded image
 
 You can find language codes and corresponding language names [here](#supported-languages).
 
-Please note that when placing an order, you can specify only one of the parameters: "text" or "resource".
+All prices are in US dollars.
 
 ## Delete an Order
 
@@ -312,9 +324,69 @@ curl "https://nitro.alconost.com/api/v1/rates" \
 
 This endpoint retrieves all rates.
 
+All prices are in US dollars.
+
 ### HTTP Request
 
 `GET https://nitro.alconost.com/api/v1/rates`
+
+## Calculate
+
+```shell
+curl "https://nitro.alconost.com/api/v1/calculate" \
+  -H "Content-Type: application/json" \
+  -u apikey:
+  -d '{
+  "source_language": "en",
+  "target_languages": [
+    "en",
+    "it"
+  ],
+  "resource": {
+    "type": "text/html",
+    "metadata": "resource metadata",
+    "data": "html data"
+  }
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "source_language": "en",
+    "target_language": "en",
+    "volume": 12,
+    "price": 0.15
+  },
+  {
+    "source_language": "en",
+    "target_language": "it",
+    "volume": 12,
+    "price": 0.19
+  }
+]
+```
+
+This endpoint retrieves the translation price.
+
+All prices are in US dollars.
+
+### HTTP Request
+
+`POST https://nitro.alconost.com/api/v1/calculate`
+
+### Attributes
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+source_language | Yes | string | Source language
+target_languages | Yes | array | Collection of target languages
+resource | Yes | object | Resource to be translated
+resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json` only supported)
+metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
+resource.data | Yes | string | Resource data
 
 # Supported languages
 
