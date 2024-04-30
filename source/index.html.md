@@ -31,7 +31,7 @@ curl "api_endpoint_here" \
   -H "Authorization: generate_auth_header_here" 
 ```
 
-HTTP Basic authentication. The API key acts as the username. API keys are per-account and can be generated and deleted in the <a href="https://nitro.alconost.com/customer/settings">Settings page</a>.
+HTTP Basic authentication. The API key acts as the username. API keys are per-account and can be generated and deleted in the <a href="https://app.nitrotranslate.com/customer/settings">Settings page</a>.
 Requests should contain a header field in the form of `Authorization: Basic $credentials`, where credentials is the Base64 encoded API key and a blank password joined by a single colon `:`.
 You can just copy the Authorization header value when you generate the API key.
 
@@ -40,7 +40,7 @@ You can just copy the Authorization header value when you generate the API key.
 ## Get Account
 
 ```shell
-curl "https://nitro.alconost.com/api/v1/account" \
+curl https://api.nitrotranslate.com/v1/account" \
   -H "Content-Type: application/json" \
   -u apikey:
 ```
@@ -60,7 +60,7 @@ This endpoint retrieves an account.
 
 ### HTTP Request
 
-`GET https://nitro.alconost.com/api/v1/account`
+`GET https://api.nitrotranslate.com/v1/account`
 
 
 # Orders
@@ -68,7 +68,7 @@ This endpoint retrieves an account.
 ## Get All Orders
 
 ```shell
-curl "https://nitro.alconost.com/api/v1/orders" \
+curl "https://api.nitrotranslate.com/v1/orders" \
   -H "Content-Type: application/json" \
   -u apikey:
 ```
@@ -102,7 +102,7 @@ This endpoint retrieves all account orders.
 
 ### HTTP Request
 
-`GET https://nitro.alconost.com/api/v1/orders`
+`GET https://api.nitrotranslate.com/v1/orders`
 
 ### Query Parameters
 
@@ -116,7 +116,7 @@ per_page |  | Orders count (default: 20)
 ## Get a Specific Order
 
 ```shell
-curl "https://nitro.alconost.com/api/v1/orders/7" \
+curl "https://api.nitrotranslate.com/v1/orders/7" \
   -H "Content-Type: application/json" \
   -u apikey:
 ```
@@ -170,7 +170,7 @@ This endpoint retrieves a specific order.
 
 ### HTTP Request
 
-`GET https://nitro.alconost.com/api/v1/orders/<ID>`
+`GET https://api.nitrotranslate.com/v1/orders/<ID>`
 
 ### URL Parameters
 
@@ -181,7 +181,7 @@ ID | The ID of the order to retrieve
 ## Translate
 
 ```shell
-curl "https://nitro.alconost.com/api/v1/translate" \
+curl "https://api.nitrotranslate.com/v1/translate" \
   -H "Content-Type: application/json" \
   -u apikey: \
   -d '{
@@ -249,7 +249,7 @@ This endpoint sends the text for translation and creates a list of orders.
 
 ### HTTP Request
 
-`POST https://nitro.alconost.com/api/v1/translate`
+`POST https://api.nitrotranslate.com/v1/translate`
 
 ### Attributes
 
@@ -279,7 +279,7 @@ All prices are in US dollars.
 ## Delete an Order
 
 ```shell
-curl -X DELETE "https://nitro.alconost.com/api/v1/orders/6" \
+curl -X DELETE "https://api.nitrotranslate.com/v1/orders/6" \
   -H "Content-Type: application/json" \
   -u apikey:
 ```
@@ -290,7 +290,7 @@ This endpoint deletes a specific order.
 
 ### HTTP Request
 
-`DELETE https://nitro.alconost.com/api/v1/orders/<ID>`
+`DELETE https://api.nitrotranslate.com/v1/orders/<ID>`
 
 ### URL Parameters
 
@@ -308,7 +308,7 @@ You can delete orders with QUEUE status only.
 ## Get Rates
 
 ```shell
-curl "https://nitro.alconost.com/api/v1/rates" \
+curl "https://api.nitrotranslate.com/v1/rates" \
   -H "Content-Type: application/json"
 ```
 
@@ -328,12 +328,12 @@ All prices are in US dollars.
 
 ### HTTP Request
 
-`GET https://nitro.alconost.com/api/v1/rates`
+`GET https://api.nitrotranslate.com/v1/rates`
 
 ## Calculate
 
 ```shell
-curl "https://nitro.alconost.com/api/v1/calculate" \
+curl "https://api.nitrotranslate.com/v1/calculate" \
   -H "Content-Type: application/json" \
   -u apikey:
   -d '{
@@ -375,7 +375,7 @@ All prices are in US dollars.
 
 ### HTTP Request
 
-`POST https://nitro.alconost.com/api/v1/calculate`
+`POST https://api.nitrotranslate.com/v1/calculate`
 
 ### Attributes
 
