@@ -389,13 +389,13 @@
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Authorization: generate_auth_header_here"</span> 
 </code></pre></div>
-<p>HTTP Basic authentication. The API key acts as the username. API keys are per-account and can be generated and deleted in the <a href="https://nitro.alconost.com/customer/settings">Settings page</a>.
+<p>HTTP Basic authentication. The API key acts as the username. API keys are per-account and can be generated and deleted in the <a href="https://app.nitrotranslate.com/customer/settings">Settings page</a>.
 Requests should contain a header field in the form of <code>Authorization: Basic $credentials</code>, where credentials is the Base64 encoded API key and a blank password joined by a single colon <code>:</code>.
 You can just copy the Authorization header value when you generate the API key.</p>
-<h1 id='account'>Account</h1><h2 id='get-account'>Get Account</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/account"</span> <span class="se">\</span>
-  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
-  <span class="nt">-u</span> apikey:
-</code></pre></div>
+<h1 id='account'>Account</h1><h2 id='get-account'>Get Account</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl https://api.nitrotranslate.com/v1/account<span class="s2">" </span><span class="se">\</span><span class="s2">
+  -H "</span>Content-Type: application/json<span class="s2">" </span><span class="se">\</span><span class="s2">
+  -u apikey:
+</span></code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
 </blockquote>
@@ -408,8 +408,8 @@ You can just copy the Authorization header value when you generate the API key.<
 </span></code></pre></div>
 <p>This endpoint retrieves an account.</p>
 <h3 id='http-request'>HTTP Request</h3>
-<p><code>GET https://nitro.alconost.com/api/v1/account</code></p>
-<h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get All Orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders"</span> <span class="se">\</span>
+<p><code>GET https://api.nitrotranslate.com/v1/account</code></p>
+<h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get All Orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nitrotranslate.com/v1/orders"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">-u</span> apikey:
 </code></pre></div>
@@ -439,7 +439,7 @@ You can just copy the Authorization header value when you generate the API key.<
 </span></code></pre></div>
 <p>This endpoint retrieves all account orders.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
-<p><code>GET https://nitro.alconost.com/api/v1/orders</code></p>
+<p><code>GET https://api.nitrotranslate.com/v1/orders</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
 <table><thead>
 <tr>
@@ -464,7 +464,7 @@ You can just copy the Authorization header value when you generate the API key.<
 <td>Orders count (default: 20)</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-order'>Get a Specific Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/orders/7"</span> <span class="se">\</span>
+<h2 id='get-a-specific-order'>Get a Specific Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nitrotranslate.com/v1/orders/7"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">-u</span> apikey:
 </code></pre></div>
@@ -514,7 +514,7 @@ You can just copy the Authorization header value when you generate the API key.<
 </span></code></pre></div>
 <p>This endpoint retrieves a specific order.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
-<p><code>GET https://nitro.alconost.com/api/v1/orders/&lt;ID&gt;</code></p>
+<p><code>GET https://api.nitrotranslate.com/v1/orders/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -527,7 +527,7 @@ You can just copy the Authorization header value when you generate the API key.<
 <td>The ID of the order to retrieve</td>
 </tr>
 </tbody></table>
-<h2 id='translate'>Translate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/translate"</span> <span class="se">\</span>
+<h2 id='translate'>Translate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nitrotranslate.com/v1/translate"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">-u</span> apikey: <span class="se">\</span>
   <span class="nt">-d</span> <span class="s1">'{
@@ -593,7 +593,7 @@ You can just copy the Authorization header value when you generate the API key.<
 </span></code></pre></div>
 <p>This endpoint sends the text for translation and creates a list of orders.</p>
 <h3 id='http-request-4'>HTTP Request</h3>
-<p><code>POST https://nitro.alconost.com/api/v1/translate</code></p>
+<p><code>POST https://api.nitrotranslate.com/v1/translate</code></p>
 <h3 id='attributes'>Attributes</h3>
 <table><thead>
 <tr>
@@ -704,7 +704,7 @@ You can just copy the Authorization header value when you generate the API key.<
 <p>You can find language codes and corresponding language names <a href="#supported-languages">here</a>.</p>
 
 <p>All prices are in US dollars.</p>
-<h2 id='delete-an-order'>Delete an Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://nitro.alconost.com/api/v1/orders/6"</span> <span class="se">\</span>
+<h2 id='delete-an-order'>Delete an Order</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE <span class="s2">"https://api.nitrotranslate.com/v1/orders/6"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">-u</span> apikey:
 </code></pre></div>
@@ -714,7 +714,7 @@ You can just copy the Authorization header value when you generate the API key.<
 
 <p>This endpoint deletes a specific order.</p>
 <h3 id='http-request-5'>HTTP Request</h3>
-<p><code>DELETE https://nitro.alconost.com/api/v1/orders/&lt;ID&gt;</code></p>
+<p><code>DELETE https://api.nitrotranslate.com/v1/orders/&lt;ID&gt;</code></p>
 <h3 id='url-parameters-2'>URL Parameters</h3>
 <table><thead>
 <tr>
@@ -733,7 +733,7 @@ You can just copy the Authorization header value when you generate the API key.<
 <aside class="notice">
 You can delete orders with QUEUE status only.
 </aside>
-<h1 id='rates'>Rates</h1><h2 id='get-rates'>Get Rates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/rates"</span> <span class="se">\</span>
+<h1 id='rates'>Rates</h1><h2 id='get-rates'>Get Rates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nitrotranslate.com/v1/rates"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
 </code></pre></div>
 <blockquote>
@@ -749,8 +749,8 @@ You can delete orders with QUEUE status only.
 
 <p>All prices are in US dollars.</p>
 <h3 id='http-request-6'>HTTP Request</h3>
-<p><code>GET https://nitro.alconost.com/api/v1/rates</code></p>
-<h2 id='calculate'>Calculate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://nitro.alconost.com/api/v1/calculate"</span> <span class="se">\</span>
+<p><code>GET https://api.nitrotranslate.com/v1/rates</code></p>
+<h2 id='calculate'>Calculate</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nitrotranslate.com/v1/calculate"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span> <span class="se">\</span>
   <span class="nt">-u</span> apikey:
   <span class="nt">-d</span> <span class="s1">'{
@@ -788,7 +788,7 @@ You can delete orders with QUEUE status only.
 
 <p>All prices are in US dollars.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
-<p><code>POST https://nitro.alconost.com/api/v1/calculate</code></p>
+<p><code>POST https://api.nitrotranslate.com/v1/calculate</code></p>
 <h3 id='attributes-2'>Attributes</h3>
 <table><thead>
 <tr>
