@@ -598,7 +598,7 @@ You can delete orders with QUEUE status only.
 <p>This endpoint returns the translation price.</p>
 
 <p>All prices are in US dollars.</p>
-<h3 id='request'>Request</h3>
+<h3 id='http-request-5'>HTTP Request</h3>
 <p><code>POST https://api.nitrotranslate.com/v1/calculate</code></p>
 <h3 id='attributes'>Attributes</h3>
 <table><thead>
@@ -711,7 +711,9 @@ You can delete orders with QUEUE status only.
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This endpoint sends the text for translation and creates a list of orders.</p>
-<h3 id='http-request-5'>HTTP Request</h3>
+
+<p>All prices are in US dollars.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
 <p><code>POST https://api.nitrotranslate.com/v1/translate</code></p>
 <h3 id='attributes-2'>Attributes</h3>
 <table><thead>
@@ -821,8 +823,6 @@ You can delete orders with QUEUE status only.
 </tbody></table>
 
 <p>You can find language codes and corresponding language names <a href="#supported-languages">here</a>.</p>
-
-<p>All prices are in US dollars.</p>
 <h1 id='rates'>Rates</h1><h2 id='get-rates'>Get Rates</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nitrotranslate.com/v1/rates"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
 </code></pre></div>
@@ -838,7 +838,7 @@ You can delete orders with QUEUE status only.
 <p>This endpoint retrieves all rates.</p>
 
 <p>All prices are in US dollars.</p>
-<h3 id='http-request-6'>HTTP Request</h3>
+<h3 id='http-request-7'>HTTP Request</h3>
 <p><code>GET https://api.nitrotranslate.com/v1/rates</code></p>
 <h1 id='supported-languages'>Supported languages</h1><h2 id='languages'>Languages</h2>
 <p>Here you can view language codes and corresponding language names. Please note that you must specify the <strong>language code</strong> when placing your order.</p>
