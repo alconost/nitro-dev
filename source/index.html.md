@@ -204,7 +204,9 @@ ID | integer | The ID of the order to be deleted
 You can delete orders with QUEUE status only.
 </aside>
 
-# Calculate
+# Translation
+
+## Calculate
 
 ```shell
 curl "https://api.nitrotranslate.com/v1/calculate" \
@@ -243,11 +245,11 @@ curl "https://api.nitrotranslate.com/v1/calculate" \
 ]
 ```
 
-This endpoint retrieves the translation price.
+This endpoint returns the translation price.
 
 All prices are in US dollars.
 
-### HTTP Request
+### Request
 
 `POST https://api.nitrotranslate.com/v1/calculate`
 
@@ -262,7 +264,7 @@ resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `
 metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
 resource.data | Yes | string | Resource data
 
-# Translate
+## Translate
 
 ```shell
 curl "https://api.nitrotranslate.com/v1/translate" \

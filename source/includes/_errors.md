@@ -25,6 +25,7 @@ Error Code | Meaning
   "param2": "Error specific additional parameter 2"
 }
 ```
+
 In case of 400 (Bad Request) response code, there is an error object returned in the response body. The error object contains the error code, error description and, optionally, additional parameters related to the error.
 
 The 400 error codes are:
