@@ -379,7 +379,7 @@
             <li><a href='mailto:nitro@alconost.com'>Contact Us</a></li>
         </ul>
       <div class="sign-in-btn">
-        <a class="sign-in-btn__link" href="https://nitrotranslate.com/signup">Create an account</a>
+        <a class="sign-in-btn__link" href="https://app.nitrotranslate.com/signup">Create an account</a>
       </div>
     </div>
     <div class="page-wrapper">
@@ -411,7 +411,7 @@ You can just copy the Authorization header value when you generate the API key.<
   </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="mf">174.46</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves an account.</p>
+<p>This endpoint returns an account.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://api.nitrotranslate.com/v1/account</code></p>
 <h1 id='orders'>Orders</h1><h2 id='get-all-orders'>Get All Orders</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://api.nitrotranslate.com/v1/orders"</span> <span class="se">\</span>
@@ -442,7 +442,7 @@ You can just copy the Authorization header value when you generate the API key.<
   </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all account orders.</p>
+<p>This endpoint returns all account orders.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://api.nitrotranslate.com/v1/orders</code></p>
 <h3 id='query-parameters'>Query Parameters</h3>
@@ -517,7 +517,7 @@ You can just copy the Authorization header value when you generate the API key.<
   </span><span class="nl">"completed_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-02-16T13:45:10.000Z"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves a specific order.</p>
+<p>This endpoint returns a specific order.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://api.nitrotranslate.com/v1/orders/&lt;ID&gt;</code></p>
 <h3 id='url-parameters'>URL Parameters</h3>
@@ -835,7 +835,7 @@ You can delete orders with QUEUE status only.
   </span><span class="p">{</span><span class="nl">"source_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w"> </span><span class="nl">"target_language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"is"</span><span class="p">,</span><span class="w"> </span><span class="nl">"rate"</span><span class="p">:</span><span class="w"> </span><span class="mf">20.0</span><span class="w"> </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre></div>
-<p>This endpoint retrieves all rates.</p>
+<p>This endpoint returns all rates.</p>
 
 <p>All prices are in US dollars.</p>
 <h3 id='http-request-7'>HTTP Request</h3>
