@@ -178,7 +178,91 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the order to retrieve
 
-## Translate
+## Delete an Order
+
+```shell
+curl -X DELETE "https://api.nitrotranslate.com/v1/orders/6" \
+  -H "Content-Type: application/json" \
+  -u apikey:
+```
+
+> The above command returns 204 No Content:
+
+This endpoint deletes a specific order.
+
+### HTTP Request
+
+`DELETE https://api.nitrotranslate.com/v1/orders/<ID>`
+
+### URL Parameters
+
+Parameter | Type | Description
+--------- | ---- | -----------
+ID | integer | The ID of the order to be deleted
+
+<aside class="notice">
+You can delete orders with QUEUE status only.
+</aside>
+
+# Calculate
+
+```shell
+curl "https://api.nitrotranslate.com/v1/calculate" \
+  -H "Content-Type: application/json" \
+  -u apikey:
+  -d '{
+  "source_language": "en",
+  "target_languages": [
+    "en",
+    "it"
+  ],
+  "resource": {
+    "type": "text/html",
+    "metadata": "resource metadata",
+    "data": "html data"
+  }
+}'
+```
+
+> The above command returns JSON structured like this:
+
+```json
+[
+  {
+    "source_language": "en",
+    "target_language": "en",
+    "volume": 12,
+    "price": 0.15
+  },
+  {
+    "source_language": "en",
+    "target_language": "it",
+    "volume": 12,
+    "price": 0.19
+  }
+]
+```
+
+This endpoint retrieves the translation price.
+
+All prices are in US dollars.
+
+### HTTP Request
+
+`POST https://api.nitrotranslate.com/v1/calculate`
+
+### Attributes
+
+Parameter | Required | Type | Description
+--------- | -------- | ---- | -----------
+source_language | Yes | string | Source language
+target_languages | Yes | array | Collection of target languages
+resource | Yes | object | Resource to be translated
+resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json` only supported)
+metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
+resource.data | Yes | string | Resource data
+
+# Translate
 
 ```shell
 curl "https://api.nitrotranslate.com/v1/translate" \
@@ -257,7 +341,7 @@ Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 source_language | Yes | string | Source language
 target_languages | Yes | array | Collection of target languages
-text (deprecated) | Yes | string | Text to be translated
+text | Yes | string | (Deprecated) Text to be translated [Please use  `resource` parameter with `resource.type` - `text/plain` to send the text for translation.]
 resource | Yes | object | Resource to be translated
 resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json` only supported)
 metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
@@ -275,33 +359,6 @@ comment.attachments.data | Yes | string | Base64 encoded image
 You can find language codes and corresponding language names [here](#supported-languages).
 
 All prices are in US dollars.
-
-## Delete an Order
-
-```shell
-curl -X DELETE "https://api.nitrotranslate.com/v1/orders/6" \
-  -H "Content-Type: application/json" \
-  -u apikey:
-```
-
-> The above command returns 204 No Content:
-
-This endpoint deletes a specific order.
-
-### HTTP Request
-
-`DELETE https://api.nitrotranslate.com/v1/orders/<ID>`
-
-### URL Parameters
-
-Parameter | Type | Description
---------- | ---- | -----------
-ID | integer | The ID of the order to be deleted
-
-<aside class="notice">
-You can delete orders with QUEUE status only.
-</aside>
-
 
 # Rates
 
@@ -330,63 +387,6 @@ All prices are in US dollars.
 
 `GET https://api.nitrotranslate.com/v1/rates`
 
-## Calculate
-
-```shell
-curl "https://api.nitrotranslate.com/v1/calculate" \
-  -H "Content-Type: application/json" \
-  -u apikey:
-  -d '{
-  "source_language": "en",
-  "target_languages": [
-    "en",
-    "it"
-  ],
-  "resource": {
-    "type": "text/html",
-    "metadata": "resource metadata",
-    "data": "html data"
-  }
-}'
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "source_language": "en",
-    "target_language": "en",
-    "volume": 12,
-    "price": 0.15
-  },
-  {
-    "source_language": "en",
-    "target_language": "it",
-    "volume": 12,
-    "price": 0.19
-  }
-]
-```
-
-This endpoint retrieves the translation price.
-
-All prices are in US dollars.
-
-### HTTP Request
-
-`POST https://api.nitrotranslate.com/v1/calculate`
-
-### Attributes
-
-Parameter | Required | Type | Description
---------- | -------- | ---- | -----------
-source_language | Yes | string | Source language
-target_languages | Yes | array | Collection of target languages
-resource | Yes | object | Resource to be translated
-resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json` only supported)
-metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
-resource.data | Yes | string | Resource data
 
 # Supported languages
 
