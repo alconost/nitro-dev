@@ -56,7 +56,7 @@ curl https://api.nitrotranslate.com/v1/account" \
 }
 ```
 
-This endpoint retrieves an account.
+This endpoint returns an account.
 
 ### HTTP Request
 
@@ -98,7 +98,7 @@ curl "https://api.nitrotranslate.com/v1/orders" \
 ]
 ```
 
-This endpoint retrieves all account orders.
+This endpoint returns all account orders.
 
 ### HTTP Request
 
@@ -166,7 +166,7 @@ curl "https://api.nitrotranslate.com/v1/orders/7" \
 }
 ```
 
-This endpoint retrieves a specific order.
+This endpoint returns a specific order.
 
 ### HTTP Request
 
@@ -381,7 +381,7 @@ curl "https://api.nitrotranslate.com/v1/rates" \
 ]
 ````
 
-This endpoint retrieves all rates.
+This endpoint returns all rates.
 
 All prices are in US dollars.
 
