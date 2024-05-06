@@ -249,7 +249,7 @@ This endpoint returns the translation price.
 
 All prices are in US dollars.
 
-### Request
+### HTTP Request
 
 `POST https://api.nitrotranslate.com/v1/calculate`
 
@@ -333,6 +333,8 @@ curl "https://api.nitrotranslate.com/v1/translate" \
 ```
 This endpoint sends the text for translation and creates a list of orders.
 
+All prices are in US dollars.
+
 ### HTTP Request
 
 `POST https://api.nitrotranslate.com/v1/translate`
@@ -359,8 +361,6 @@ comment.attachments.type | Yes | string | Image mime type (like image/png). Supp
 comment.attachments.data | Yes | string | Base64 encoded image
 
 You can find language codes and corresponding language names [here](#supported-languages).
-
-All prices are in US dollars.
 
 # Rates
 
