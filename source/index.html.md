@@ -1,5 +1,5 @@
 ---
-title: NitroTranslate API Reference
+title: Nitro API Reference
 
 language_tabs:
   - shell
@@ -15,7 +15,7 @@ search: false
 
 # Introduction  
 
-Welcome to the NitroTranslate API! You can use our API to access NitroTranslate API endpoints.
+Welcome to the Nitro API! You can use our API to access Nitro API endpoints.
 
 # Authentication
 
@@ -261,7 +261,7 @@ source_language | Yes | string | Source language
 target_languages | Yes | array | Collection of target languages
 resource | Yes | object | Resource to be translated
 resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json` only supported)
-metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
+resource.metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
 resource.data | Yes | string | Resource data
 
 ## Translate
@@ -348,7 +348,7 @@ target_languages | Yes | array | Collection of target languages
 text | Yes | string | (Deprecated) Text to be translated [Please use  `resource` parameter with `resource.type` - `text/plain` to send the text for translation.]
 resource | Yes | object | Resource to be translated
 resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json` only supported)
-metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
+resource.metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
 resource.data | Yes | string | Resource data
 context | | object | Context for translator. Includes tone, limit, category
 context.tone | | enum | Choose the tone of translation: FORMAL, INFORMAL. Or let our translators choose the tone themselves by specifying GUESS
