@@ -93,7 +93,8 @@ curl "https://api.nitrotranslate.com/v1/orders" \
     "target_language": "it",
     "created_at": "2016-01-29T05:52:17.840197Z",
     "accepted_at": "2016-01-30T012:45:01.223137Z",
-    "completed_at": "2016-01-30T13:00:47.312484Z"
+    "completed_at": "2016-01-30T13:00:47.312484Z",
+    "translator": "Name"
   }
 ]
 ```
@@ -162,7 +163,8 @@ curl "https://api.nitrotranslate.com/v1/orders/7" \
   ],
   "created_at": "2023-02-16T10:47:59.000Z",
   "accepted_at": "2023-02-16T13:45:03.000Z",
-  "completed_at": "2023-02-16T13:45:10.000Z"
+  "completed_at": "2023-02-16T13:45:10.000Z",
+  "translator": "Name"
 }
 ```
 
@@ -260,7 +262,7 @@ Parameter | Required | Type | Description
 source_language | Yes | string | Source language
 target_languages | Yes | array | Collection of target languages
 resource | Yes | object | Resource to be translated
-resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json` only supported)
+resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json`, `application/xml` only supported)
 resource.metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
 resource.data | Yes | string | Resource data
 
