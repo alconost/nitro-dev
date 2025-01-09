@@ -388,7 +388,10 @@ curl "https://api.nitrotranslate.com/v1/rates" \
 ]
 ````
 
-This endpoint returns all rates.
+This endpoint returns all rates. By default, the response will provide rates for the translation service type. You can specify the service type by using the GET parameters:
+
+- https://api.nitrotranslate.com/v1/rates?service=ai_and_proofreading
+- https://api.nitrotranslate.com/v1/rates?service=translation
 
 All prices are in US dollars.
 
