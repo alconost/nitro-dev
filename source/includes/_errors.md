@@ -34,3 +34,5 @@ Error Code | Meaning
 ---------- | -------
 INSUFFICIENT_FUNDS | There's not enough funds on the account to place an order
 WRONG_ORDER_STATUS | The order is not in the QUEUE status (already taken or completed) and you try to delete it
+SERVICE_NOT_FOUND | The selected type of service was not found
+LANGUAGE_NOT_FOUND | We cannot find appropriate language pair
