@@ -132,6 +132,7 @@ curl "https://api.nitrotranslate.com/v1/orders/7" \
     "metadata": "resource metadata",
     "data": "html data"
   },
+  "service": "translation",
   "source_text": "Test",
   "target_text": "Test",
   "status": "DONE",
@@ -220,6 +221,7 @@ curl "https://api.nitrotranslate.com/v1/calculate" \
     "en",
     "it"
   ],
+  "service": "translation",
   "resource": {
     "type": "text/html",
     "metadata": "resource metadata",
@@ -261,6 +263,7 @@ Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 source_language | Yes | string | Source language
 target_languages | Yes | array | Collection of target languages
+service | No | enum | 	Choose the type of service: translation, ai_and_proofreading
 resource | Yes | object | Resource to be translated
 resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json`, `application/xml` only supported)
 resource.metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
@@ -278,6 +281,7 @@ curl "https://api.nitrotranslate.com/v1/translate" \
     "en",
     "it"
   ],
+  "service": "translation",
   "resource": {
     "type": "text/html",
     "metadata": "resource metadata",
@@ -347,6 +351,7 @@ Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 source_language | Yes | string | Source language
 target_languages | Yes | array | Collection of target languages
+service | No | enum | 	Choose the type of service: translation, ai_and_proofreading
 text | Yes | string | (Deprecated) Text to be translated [Please use  `resource` parameter with `resource.type` - `text/plain` to send the text for translation.]
 resource | Yes | object | Resource to be translated
 resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json` only supported)
@@ -383,7 +388,10 @@ curl "https://api.nitrotranslate.com/v1/rates" \
 ]
 ````
 
-This endpoint returns all rates.
+This endpoint returns all rates. By default, the response will provide rates for the translation service type. You can specify the service type by using the GET parameters:
+
+- /rates?service=translation
+- /rates?service=ai_and_proofreading
 
 All prices are in US dollars.
 
