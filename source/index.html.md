@@ -262,8 +262,8 @@ All prices are in US dollars.
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 source_language | Yes | string | Source language
-target_languages | Yes | array | Collection of target languages
-service | No | enum | 	Choose the type of service: translation, ai_and_proofreading
+target_languages | Yes | array | Collection of target languages. Specify the target language the same as the source to order proofreading.
+service | No | enum | 	Choose the type of service: translation - text will be translated by professional human translator, ai_and_proofreading - text will be translated by AI and proofread by professional human translator.
 resource | Yes | object | Resource to be translated
 resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json`, `application/xml` only supported)
 resource.metadata |  | string | Аny resource data to identify the order: file name, file path, etc.
@@ -350,8 +350,8 @@ All prices are in US dollars.
 Parameter | Required | Type | Description
 --------- | -------- | ---- | -----------
 source_language | Yes | string | Source language
-target_languages | Yes | array | Collection of target languages
-service | No | enum | 	Choose the type of service: translation, ai_and_proofreading
+target_languages | Yes | array | Collection of target languages. Specify the target language the same as the source to order proofreading.
+service | No | enum | 	Choose the type of service: translation - text will be translated by professional human translator, ai_and_proofreading - text will be translated by AI and proofread by professional human translator.
 text | Yes | string | (Deprecated) Text to be translated [Please use  `resource` parameter with `resource.type` - `text/plain` to send the text for translation.]
 resource | Yes | object | Resource to be translated
 resource.type | Yes | string | Resource MIME type (at the moment `text/plain`, `text/html`, `text/x-objcstrings`, `application/json` only supported)
